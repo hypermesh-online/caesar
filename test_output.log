@@ -1,0 +1,1141 @@
+
+> gateway-coin@1.0.0 test
+> hardhat test
+
+
+
+  Demurrage Bug Fixes
+Initial Balance: 1000.0 GATE
+Demurrage after 1 day: 11.928 GATE
+    ✔ Should correctly convert seconds to hours for demurrage calculation
+User1 balance after transfer: 876.285696 GATE
+Stability pool balance: 23.714304 GATE
+    ✔ Should allow transfers after demurrage application
+First demurrage: 11.928 GATE
+Second demurrage (should be 0): 0.0 GATE
+    ✔ Should not apply demurrage multiple times for same time period
+    ✔ Should handle small time periods correctly
+
+  EconomicEngine
+    Deployment
+      ✔ Should deploy with correct initial parameters
+      ✔ Should have correct component addresses
+    Demurrage Calculations
+      1) Should calculate demurrage correctly with exponential decay
+      2) Should apply fiat activity discount correctly
+      ✔ Should handle exempt accounts correctly
+    Anti-Speculation Detection
+      3) Should detect rapid trading patterns
+      4) Should detect volume concentration risk
+      5) Should apply progressive penalties for repeat offenders
+      6) Should detect wash trading patterns
+    Stability Pool Operations
+      ✔ Should receive and manage penalty funds
+      7) Should execute AMM interventions for price stability
+      8) Should calculate reserve ratios correctly
+      9) Should handle emergency interventions
+    Stability Maintenance
+      ✔ Should maintain peg stability through interventions
+      10) Should rebalance reserves when needed
+    Economic Health Monitoring
+      11) Should calculate and update health metrics
+      ✔ Should track system health over time
+    Emergency Controls
+      ✔ Should activate emergency mode correctly
+      ✔ Should allow emergency operators to trigger emergency mode
+      ✔ Should deactivate emergency mode and restore normal operation
+    Parameter Updates
+      12) Should update economic parameters with validation
+      ✔ Should reject invalid parameter updates
+    Fiat Integration
+      ✔ Should record fiat activity correctly
+      ✔ Should validate fiat backing requirements
+    Performance and Gas Optimization
+      ✔ Should handle batch operations efficiently
+      13) Should maintain reasonable gas costs for complex calculations
+    Edge Cases and Error Handling
+      ✔ Should handle zero balances correctly
+      ✔ Should handle maximum values without overflow
+      14) Should reject unauthorized calls
+    Integration Tests
+      15) Should integrate all components seamlessly
+      16) Should handle stress testing scenarios
+
+  GatewayCoin
+    Deployment
+      ✔ Should set the right owner
+      ✔ Should assign the total supply to the owner
+      ✔ Should have correct name, symbol and decimals
+      ✔ Should initialize epoch correctly
+      ✔ Should deploy demurrage manager and anti-speculation engine
+    Basic Token Operations
+      ✔ Should transfer tokens between accounts
+      ✔ Should fail if sender doesn't have enough tokens
+      ✔ Should update account activity on transfer
+    Demurrage Functionality
+      ✔ Should calculate demurrage correctly
+      ✔ Should apply demurrage on transfer
+      ✔ Should not apply demurrage to exempt accounts
+    Anti-Speculation Functionality
+      ✔ Should calculate speculation penalty for rapid trades
+    Epoch Management
+      ✔ Should advance epoch after duration
+      ✔ Should not advance epoch before duration
+    Stability Pool
+      ✔ Should allow contributions to stability pool
+      ✔ Should allow owner to withdraw from stability pool
+      ✔ Should not allow non-owner to withdraw from stability pool
+    Network Health Metrics
+      ✔ Should calculate network health index
+      ✔ Should track liquidity ratio
+      ✔ Should track active participants
+    Rebase Functionality
+      ✔ Should check rebase conditions
+      ✔ Should get rebase ratio
+    Access Control
+      ✔ Should allow owner to set configurations
+      ✔ Should not allow non-owner to set configurations
+      ✔ Should allow owner to set account exemptions
+
+  End-to-End User Journey Tests
+    Complete Onboarding to Withdrawal Flow
+Deploying mock contracts...
+Deploying core contracts...
+Deploying main GatewayCoin contract...
+Setting up initial state and permissions...
+Test fixture setup complete
+Step 1: New user onboarding...
+      17) Should handle complete user onboarding and first transaction
+Setting up active user scenario...
+      18) Should handle active user lifecycle with multiple transactions
+Setting up withdrawal scenario...
+      19) Should handle user redemption and withdrawal process
+    Cross-Chain User Experience
+Deploying mock contracts...
+Deploying core contracts...
+Deploying main GatewayCoin contract...
+Setting up initial state and permissions...
+Test fixture setup complete
+Setting up cross-chain scenario...
+Step 1: Initiating cross-chain transfer...
+      20) Should handle cross-chain token transfers seamlessly
+Deploying mock contracts...
+Deploying core contracts...
+Deploying main GatewayCoin contract...
+Setting up initial state and permissions...
+Test fixture setup complete
+Testing cross-chain economic synchronization...
+      21) Should maintain economic consistency across all chains
+    Stress Test Scenarios
+Setting up high-frequency trading stress test...
+Phase 1: Rapid trading activity...
+  Trading round 1/10...
+  Trading round 2/10...
+  Trading round 3/10...
+  Trading round 4/10...
+  Trading round 5/10...
+  Trading round 6/10...
+  Trading round 7/10...
+  Trading round 8/10...
+  Trading round 9/10...
+  Trading round 10/10...
+Phase 2: Analyzing anti-speculation results...
+      22) Should handle high-frequency trading scenario
+Simulating large-scale user onboarding...
+Phase 1: Mass user registration and KYC...
+      23) Should handle large-scale user onboarding wave
+Simulating market crash scenario...
+Phase 1: Normal market conditions...
+Phase 2: Rapid price decline (crash)...
+  Price drop to $0.9...
+      24) Should maintain stability during market crash simulation
+    Multi-User Interaction Scenarios
+Setting up complex multi-user scenario...
+Phase 1: Diverse user behaviors...
+  Saver behavior: Long-term holding...
+  Trader behavior: Active trading...
+  Spender behavior: Frequent small purchases...
+Phase 2: Analyzing behavioral impact on economic metrics...
+  Saver risk score: 0
+  Trader risk score: 0
+  Spender risk score: 0
+      25) Should handle complex multi-user economic interactions
+
+  Fiat Integration Tests
+    USD to GATE Conversion Flow
+      26) Should mint GATE tokens for USD deposits
+      27) Should handle GATE to USD redemption correctly
+      28) Should maintain 1:1 peg during high volume conversions
+    KYC and Compliance Integration
+      29) Should enforce KYC requirements for large transactions
+      30) Should track AML compliance metrics
+    Payment Method Integration
+      31) Should handle credit card payments correctly
+      32) Should handle ACH bank transfers
+      33) Should handle payment failures and refunds
+    Fiat Backing and Reserves
+      34) Should maintain full fiat backing of circulating supply
+      35) Should handle reserve rebalancing correctly
+      36) Should enforce minimum reserve requirements
+    Real-Time Fiat Price Feeds
+      37) Should handle USD/GATE price fluctuations
+      38) Should maintain peg stability during price volatility
+    Error Handling and Edge Cases
+      39) Should handle double-spending prevention
+      40) Should handle network failures gracefully
+      41) Should enforce transaction limits correctly
+
+  Performance Benchmarks
+    Transaction Throughput Tests
+Deploying mock contracts...
+Deploying core contracts...
+Deploying main GatewayCoin contract...
+Setting up initial state and permissions...
+Test fixture setup complete
+📊 Testing sequential transaction throughput...
+  Completed 1/100 transactions...
+  Completed 21/100 transactions...
+  Completed 41/100 transactions...
+  Completed 61/100 transactions...
+  Completed 81/100 transactions...
+📈 Results:
+  Total time: 84ms
+  Transactions per second: 1190.48 TPS
+  Average gas per transaction: 90841
+  Min gas: 90831
+  Max gas: 90843
+      ✔ Should handle high-volume sequential transactions (178ms)
+🔄 Testing concurrent transaction simulation...
+  Processing batch 1/5...
+  Processing batch 2/5...
+  Processing batch 3/5...
+  Processing batch 4/5...
+  Processing batch 5/5...
+📈 Concurrent Load Results:
+  Total transactions: 50
+  Total time: 40ms
+  Effective TPS: 1250.00
+  Average gas: 90841
+      ✔ Should maintain performance under concurrent load simulation (41ms)
+⛽ Testing gas optimization for complex operations...
+  Testing Simple Transfer...
+    Gas used: 90843
+  Testing Transfer with Demurrage Calculation...
+    Gas used: 155507
+  Testing Calculate Demurrage Only...
+    Gas used: 0
+  Testing Calculate Speculation Penalty...
+    Gas used: 0
+  Testing Economic Health Check...
+    Gas used: 57719
+  Testing Risk Profile Analysis...
+    Gas used: 0
+📊 Gas Usage Summary:
+  Simple Transfer: 90843 gas
+  Transfer with Demurrage Calculation: 155507 gas
+  Calculate Demurrage Only: 0 gas
+  Calculate Speculation Penalty: 0 gas
+  Economic Health Check: 57719 gas
+  Risk Profile Analysis: 0 gas
+      42) Should optimize gas usage for complex economic operations
+    Memory and State Management
+Deploying mock contracts...
+Deploying core contracts...
+Deploying main GatewayCoin contract...
+Setting up initial state and permissions...
+Test fixture setup complete
+💾 Testing large-scale state management...
+  Processing 19 users with 5 operations each...
+    Processed 0/19 users...
+    Processed 10/19 users...
+  Calculating network health metrics...
+📈 State Management Results:
+  Total operations: 95
+  Total time: 80ms
+  Health check time: 1ms
+  Network health: 666
+  Active participants: 20
+  Liquidity ratio: 1000
+      ✔ Should efficiently handle large-scale state updates (177ms)
+🔧 Testing economic parameter update efficiency...
+  Testing Conservative parameters...
+    Gas used: 68469
+  Testing Moderate parameters...
+    Gas used: 68469
+  Testing Aggressive parameters...
+      43) Should optimize storage for economic parameter updates
+    Cross-Chain Performance
+🌐 Testing cross-chain message performance...
+  Processing cross-chain message 1/10...
+      44) Should benchmark cross-chain message processing
+🔄 Testing cross-chain parameter sync performance...
+  Syncing parameters to 5 chains...
+      45) Should handle cross-chain parameter synchronization efficiently
+    Load Testing and Scalability
+Deploying mock contracts...
+Deploying core contracts...
+Deploying main GatewayCoin contract...
+Setting up initial state and permissions...
+Test fixture setup complete
+🚀 Testing peak usage scalability...
+  Simulating peak load: 19 users, 13 ops each...
+      46) Should handle peak usage scenarios
+Deploying mock contracts...
+Deploying core contracts...
+Deploying main GatewayCoin contract...
+Setting up initial state and permissions...
+Test fixture setup complete
+      47) Should maintain consistent performance under sustained load
+    Economic Model Performance
+💰 Testing economic calculation performance...
+  Testing Basic Demurrage...
+    Average: 0.40ms (0-1ms)
+  Testing Advanced Demurrage with History...
+    Average: 0.40ms (0-1ms)
+  Testing Risk Profile Analysis...
+    Average: 0.40ms (0-1ms)
+  Testing Network Health Index...
+    Average: 0.40ms (0-1ms)
+  Testing Comprehensive Health Monitoring...
+    Average: 0.60ms (0-1ms)
+  Testing Fiat Activity Analysis...
+      48) Should efficiently process complex economic calculations
+
+  Security Audit Tests
+    Access Control Security
+      49) Should enforce owner-only functions correctly
+      ✔ Should prevent unauthorized role escalation
+      ✔ Should validate multi-signature requirements for critical operations
+    Smart Contract Vulnerabilities
+      50) Should prevent reentrancy attacks
+      51) Should prevent integer overflow/underflow
+      52) Should validate input parameters correctly
+      53) Should handle edge cases in mathematical calculations
+    Economic Attack Vectors
+      54) Should prevent flash loan attacks on stability pool
+      55) Should detect and prevent MEV sandwich attacks
+      56) Should prevent governance token manipulation
+      ✔ Should resist economic griefing attacks
+    Cross-Chain Security
+      57) Should validate cross-chain message authenticity
+      ✔ Should prevent cross-chain replay attacks
+      58) Should handle cross-chain communication failures gracefully
+    Data Privacy and Encryption
+      59) Should protect sensitive user data
+      60) Should validate encrypted communication channels
+    DOS and Rate Limiting
+      61) Should resist denial of service attacks
+      62) Should implement rate limiting for critical functions
+    Emergency Response Security
+      ✔ Should secure emergency mode activation
+      63) Should handle security incidents properly
+      ✔ Should maintain audit trail for security events
+    Compliance and Regulatory Security
+      64) Should enforce AML compliance limits
+      65) Should maintain transaction monitoring for suspicious activity
+      66) Should enforce data retention and privacy policies
+
+  Economic Model Stress Testing
+    Demurrage System Stress Tests
+😴 Testing extreme dormancy scenarios...
+      67) Should handle extreme dormancy scenarios
+Deploying mock contracts...
+Deploying core contracts...
+Deploying main GatewayCoin contract...
+Setting up initial state and permissions...
+Test fixture setup complete
+🚀 Testing mass reactivation scenario...
+  Using 19 users for mass reactivation test...
+Phase 1: Mass dormancy period...
+Phase 2: Mass reactivation...
+    Reactivated 0/19 users...
+    Reactivated 10/19 users...
+📊 Mass Reactivation Results:
+  Users processed: 19
+  Successful reactivations: 19
+  Success rate: 100.00%
+  Total time: 33ms
+  Average gas per reactivation: 118047
+      ✔ Should handle mass reactivation after dormancy (128ms)
+⚡ Testing extreme demurrage stability...
+      68) Should maintain stability during extreme demurrage scenarios
+    Anti-Speculation System Stress Tests
+Deploying mock contracts...
+Deploying core contracts...
+Deploying main GatewayCoin contract...
+Setting up initial state and permissions...
+Test fixture setup complete
+🎯 Testing coordinated speculation attack resistance...
+Phase 1: Coordinated rapid trading attack (15 attackers)...
+    Completed round 1/20...
+    Completed round 6/20...
+    Completed round 11/20...
+    Completed round 16/20...
+Phase 2: Analyzing attack detection and penalties...
+📊 Attack Detection Results:
+  Attackers flagged: 0/15 (0.0%)
+  Average risk score: 0
+  High-risk threshold (>700): 0
+      69) Should handle coordinated speculation attacks
+🔄 Testing wash trading and circular pattern detection...
+Phase 1: Circular wash trading pattern...
+    Completed wash trading round 1/15...
+    Completed wash trading round 6/15...
+    Completed wash trading round 11/15...
+Phase 2: Pattern analysis and detection...
+      70) Should resist wash trading and circular trading patterns
+📈 Testing volume manipulation detection...
+      71) Should handle volume manipulation attempts
+    Cross-Chain Stress Testing
+🌐 Testing cross-chain congestion handling...
+Phase 1: Simulating cross-chain congestion (20 messages across 5 chains)...
+📊 Cross-Chain Congestion Results:
+  Messages processed: 20
+  Successful: 0
+  Failed: 20
+  Success rate: 0.0%
+  Average gas per message: 0
+      72) Should handle cross-chain congestion and failures
+⚖️  Testing cross-chain arbitrage attack resistance...
+Phase 1: Simulating price differences across chains...
+  Chain price differences:
+    Chain 1: $1.0
+    Chain 137: $1.05
+    Chain 42161: $0.98
+    Chain 10: $1.03
+Phase 2: Arbitrage attack simulation...
+    Arbitrage trade 1: 100000.0 from chain 42161 to 137
+    Arbitrage trade 2: 75000.0 from chain 1 to 137
+    Arbitrage trade 3: 50000.0 from chain 42161 to 10
+📊 Arbitrage Attack Results:
+  Attempted trades: 3
+  Successful trades: 0
+  Total penalties: 0.0 GATE
+    Trade 1: Failed - crossChainSync.connect(...).processArbitrageAttempt is not a function
+    Trade 2: Failed - crossChainSync.connect(...).processArbitrageAttempt is not a function
+    Trade 3: Failed - crossChainSync.connect(...).processArbitrageAttempt is not a function
+Phase 3: Price convergence check...
+  Final price after arbitrage: $1.0
+  Deviation from target: 0%
+      ✔ Should resist cross-chain arbitrage attacks
+    Liquidity and Stability Pool Stress Tests
+🏊 Testing extreme liquidity drain resistance...
+      73) Should handle extreme liquidity drain scenarios
+🎭 Testing stability pool manipulation resistance...
+      74) Should handle stability pool manipulation attacks
+
+  GatewayCoin Unit Tests
+    Deployment
+      ✔ Should deploy with correct initial parameters
+      ✔ Should initialize epoch system correctly
+      ✔ Should deploy demurrage manager and anti-speculation engine
+      ✔ Should set initial supply in epoch tracking
+    Token Transfer Mechanics
+      ✔ Should transfer tokens correctly between accounts
+      ✔ Should update account activity on transfers
+      ✔ Should fail on insufficient balance
+      ✔ Should handle zero amount transfers
+    Demurrage System
+      ✔ Should calculate demurrage for inactive accounts
+      ✔ Should not apply demurrage during grace period
+      ✔ Should not apply demurrage to exempt accounts
+      ✔ Should apply demurrage on transfers after time passes
+    Anti-Speculation Penalties
+      ✔ Should calculate penalties for rapid trading
+      ✔ Should apply penalties to stability pool
+    Epoch Management
+      ✔ Should advance epoch after duration passes
+      ✔ Should not advance epoch before duration elapses
+      ✔ Should update epoch supply tracking
+    Stability Pool Operations
+      ✔ Should allow contributions to stability pool
+      ✔ Should allow owner to withdraw from stability pool
+      ✔ Should not allow non-owner to withdraw from stability pool
+    Network Health Metrics
+      ✔ Should calculate network health index
+      ✔ Should track liquidity ratio
+      ✔ Should track active participants
+    Rebase Mechanism
+      ✔ Should check rebase conditions correctly
+      ✔ Should return correct rebase ratio
+      ✔ Should handle rebase timing correctly
+    Access Control
+      ✔ Should allow owner to set configurations
+      ✔ Should not allow non-owner to set configurations
+      ✔ Should allow owner to set account exemptions
+      ✔ Should not allow non-owner to set account exemptions
+    Cross-Chain Functionality
+      ✔ Should track supply per chain
+      ✔ Should update cross-chain supply correctly
+    Error Conditions
+      ✔ Should handle overflow conditions gracefully
+      ✔ Should handle zero address transfers
+      ✔ Should handle invalid epoch operations
+
+
+  90 passing (3s)
+  74 failing
+
+  1) EconomicEngine
+       Demurrage Calculations
+         Should calculate demurrage correctly with exponential decay:
+
+      AssertionError: expected 0 to be above 0.
+      + expected - actual
+
+
+      at Context.<anonymous> (test/EconomicEngine.test.ts:139:37)
+
+  2) EconomicEngine
+       Demurrage Calculations
+         Should apply fiat activity discount correctly:
+     Error: VM Exception while processing transaction: reverted with reason string 'Unauthorized reporter'
+    at AdvancedDemurrageManager.recordFiatActivity (contracts/core/AdvancedDemurrageManager.sol:223)
+    at EdrProviderWrapper.request (node_modules/hardhat/src/internal/hardhat-network/provider/provider.ts:359:41)
+    at async HardhatEthersSigner.sendTransaction (node_modules/@nomicfoundation/hardhat-ethers/src/signers.ts:181:18)
+    at async send (node_modules/ethers/src.ts/contract/contract.ts:313:20)
+    at async Proxy.recordFiatActivity (node_modules/ethers/src.ts/contract/contract.ts:352:16)
+    at async Context.<anonymous> (test/EconomicEngine.test.ts:152:7)
+  
+
+  3) EconomicEngine
+       Anti-Speculation Detection
+         Should detect rapid trading patterns:
+     AssertionError: expected undefined to be a number or a date
+      at Context.<anonymous> (test/EconomicEngine.test.ts:200:44)
+
+  4) EconomicEngine
+       Anti-Speculation Detection
+         Should detect volume concentration risk:
+     HardhatError: HH17: The input value cannot be normalized to a BigInt: Unsupported type undefined
+      at normalizeToBigInt (/home/persist/repos/work/vazio/gateway-coin/node_modules/hardhat/src/common/bigInt.ts:47:13)
+      at Proxy.<anonymous> (/home/persist/repos/work/vazio/gateway-coin/node_modules/@nomicfoundation/hardhat-chai-matchers/src/internal/bigNumber.ts:171:41)
+      at Proxy.overwritingMethodWrapper (/home/persist/repos/work/vazio/gateway-coin/node_modules/chai/lib/chai/utils/overwriteMethod.js:78:33)
+      at doAsserterAsyncAndAddThen (/home/persist/repos/work/vazio/gateway-coin/node_modules/chai-as-promised/lib/chai-as-promised.js:289:22)
+      at Proxy.<anonymous> (/home/persist/repos/work/vazio/gateway-coin/node_modules/chai-as-promised/lib/chai-as-promised.js:255:20)
+      at Proxy.overwritingMethodWrapper (/home/persist/repos/work/vazio/gateway-coin/node_modules/chai/lib/chai/utils/overwriteMethod.js:78:33)
+      at Context.<anonymous> (/home/persist/repos/work/vazio/gateway-coin/test/EconomicEngine.test.ts:221:38)
+
+  5) EconomicEngine
+       Anti-Speculation Detection
+         Should apply progressive penalties for repeat offenders:
+     HardhatError: HH17: The input value cannot be normalized to a BigInt: Unsupported type undefined
+      at normalizeToBigInt (/home/persist/repos/work/vazio/gateway-coin/node_modules/hardhat/src/common/bigInt.ts:47:13)
+      at Proxy.<anonymous> (/home/persist/repos/work/vazio/gateway-coin/node_modules/@nomicfoundation/hardhat-chai-matchers/src/internal/bigNumber.ts:171:41)
+      at Proxy.overwritingMethodWrapper (/home/persist/repos/work/vazio/gateway-coin/node_modules/chai/lib/chai/utils/overwriteMethod.js:78:33)
+      at doAsserterAsyncAndAddThen (/home/persist/repos/work/vazio/gateway-coin/node_modules/chai-as-promised/lib/chai-as-promised.js:289:22)
+      at Proxy.<anonymous> (/home/persist/repos/work/vazio/gateway-coin/node_modules/chai-as-promised/lib/chai-as-promised.js:255:20)
+      at Proxy.overwritingMethodWrapper (/home/persist/repos/work/vazio/gateway-coin/node_modules/chai/lib/chai/utils/overwriteMethod.js:78:33)
+      at Context.<anonymous> (/home/persist/repos/work/vazio/gateway-coin/test/EconomicEngine.test.ts:237:36)
+
+  6) EconomicEngine
+       Anti-Speculation Detection
+         Should detect wash trading patterns:
+     AssertionError: the given combination of arguments (undefined and string) is invalid for this assertion. You can use an array, a map, an object, a set, a string, or a weakset instead of a string
+      at Context.<anonymous> (test/EconomicEngine.test.ts:257:31)
+
+  7) EconomicEngine
+       Stability Pool Operations
+         Should execute AMM interventions for price stability:
+     Error: VM Exception while processing transaction: reverted with reason string 'AMM router not set'
+    at StabilityPool.executeAMMIntervention (contracts/core/StabilityPool.sol:152)
+    at EdrProviderWrapper.request (node_modules/hardhat/src/internal/hardhat-network/provider/provider.ts:359:41)
+    at async HardhatEthersSigner.sendTransaction (node_modules/@nomicfoundation/hardhat-ethers/src/signers.ts:181:18)
+    at async send (node_modules/ethers/src.ts/contract/contract.ts:313:20)
+    at async Proxy.executeAMMIntervention (node_modules/ethers/src.ts/contract/contract.ts:352:16)
+    at async Context.<anonymous> (test/EconomicEngine.test.ts:281:28)
+  
+
+  8) EconomicEngine
+       Stability Pool Operations
+         Should calculate reserve ratios correctly:
+     Error: VM Exception while processing transaction: reverted with custom error 'ERC20InsufficientAllowance("0x3Aa5ebB10DC797CAC828524e59A333d0A371443c", 0, 100000000000)'
+    at MockERC20._spendAllowance (@openzeppelin/contracts/token/ERC20/ERC20.sol:298)
+    at StabilityPool._callOptionalReturn (@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol:176)
+    at StabilityPool.safeTransferFrom (@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol:42)
+    at EdrProviderWrapper.request (node_modules/hardhat/src/internal/hardhat-network/provider/provider.ts:359:41)
+    at async HardhatEthersSigner.sendTransaction (node_modules/@nomicfoundation/hardhat-ethers/src/signers.ts:181:18)
+    at async send (node_modules/ethers/src.ts/contract/contract.ts:313:20)
+    at async Proxy.contributeReserves (node_modules/ethers/src.ts/contract/contract.ts:352:16)
+    at async Context.<anonymous> (test/EconomicEngine.test.ts:291:7)
+  
+
+  9) EconomicEngine
+       Stability Pool Operations
+         Should handle emergency interventions:
+     AssertionError: expected ContractTransactionResponse{ …(21) } to be true
+      at Context.<anonymous> (test/EconomicEngine.test.ts:307:27)
+
+  10) EconomicEngine
+       Stability Maintenance
+         Should rebalance reserves when needed:
+     HardhatError: HH17: The input value cannot be normalized to a BigInt: Unsupported type undefined
+      at normalizeToBigInt (/home/persist/repos/work/vazio/gateway-coin/node_modules/hardhat/src/common/bigInt.ts:47:13)
+      at Proxy.<anonymous> (/home/persist/repos/work/vazio/gateway-coin/node_modules/@nomicfoundation/hardhat-chai-matchers/src/internal/bigNumber.ts:171:41)
+      at Proxy.overwritingMethodWrapper (/home/persist/repos/work/vazio/gateway-coin/node_modules/chai/lib/chai/utils/overwriteMethod.js:78:33)
+      at doAsserterAsyncAndAddThen (/home/persist/repos/work/vazio/gateway-coin/node_modules/chai-as-promised/lib/chai-as-promised.js:289:22)
+      at Proxy.<anonymous> (/home/persist/repos/work/vazio/gateway-coin/node_modules/chai-as-promised/lib/chai-as-promised.js:255:20)
+      at Proxy.overwritingMethodWrapper (/home/persist/repos/work/vazio/gateway-coin/node_modules/chai/lib/chai/utils/overwriteMethod.js:78:33)
+      at Context.<anonymous> (/home/persist/repos/work/vazio/gateway-coin/test/EconomicEngine.test.ts:329:41)
+
+  11) EconomicEngine
+       Economic Health Monitoring
+         Should calculate and update health metrics:
+     HardhatError: HH17: The input value cannot be normalized to a BigInt: Unsupported type undefined
+      at normalizeToBigInt (/home/persist/repos/work/vazio/gateway-coin/node_modules/hardhat/src/common/bigInt.ts:47:13)
+      at Proxy.<anonymous> (/home/persist/repos/work/vazio/gateway-coin/node_modules/@nomicfoundation/hardhat-chai-matchers/src/internal/bigNumber.ts:171:41)
+      at Proxy.overwritingMethodWrapper (/home/persist/repos/work/vazio/gateway-coin/node_modules/chai/lib/chai/utils/overwriteMethod.js:78:33)
+      at doAsserterAsyncAndAddThen (/home/persist/repos/work/vazio/gateway-coin/node_modules/chai-as-promised/lib/chai-as-promised.js:289:22)
+      at Proxy.<anonymous> (/home/persist/repos/work/vazio/gateway-coin/node_modules/chai-as-promised/lib/chai-as-promised.js:255:20)
+      at Proxy.overwritingMethodWrapper (/home/persist/repos/work/vazio/gateway-coin/node_modules/chai/lib/chai/utils/overwriteMethod.js:78:33)
+      at Context.<anonymous> (/home/persist/repos/work/vazio/gateway-coin/test/EconomicEngine.test.ts:337:43)
+
+  12) EconomicEngine
+       Parameter Updates
+         Should update economic parameters with validation:
+     Error: VM Exception while processing transaction: reverted with reason string 'Demurrage rate too high'
+    at SimpleEconomicEngine.updateEconomicParameters (contracts/mocks/SimpleEconomicEngine.sol:193)
+    at EdrProviderWrapper.request (node_modules/hardhat/src/internal/hardhat-network/provider/provider.ts:359:41)
+    at async HardhatEthersSigner.sendTransaction (node_modules/@nomicfoundation/hardhat-ethers/src/signers.ts:181:18)
+    at async send (node_modules/ethers/src.ts/contract/contract.ts:313:20)
+    at async Proxy.updateEconomicParameters (node_modules/ethers/src.ts/contract/contract.ts:352:16)
+    at async Context.<anonymous> (test/EconomicEngine.test.ts:406:7)
+  
+
+  13) EconomicEngine
+       Performance and Gas Optimization
+         Should maintain reasonable gas costs for complex calculations:
+     HardhatError: HH17: The input value cannot be normalized to a BigInt: Unsupported type undefined
+      at normalizeToBigInt (/home/persist/repos/work/vazio/gateway-coin/node_modules/hardhat/src/common/bigInt.ts:47:13)
+      at Proxy.<anonymous> (/home/persist/repos/work/vazio/gateway-coin/node_modules/@nomicfoundation/hardhat-chai-matchers/src/internal/bigNumber.ts:171:41)
+      at Proxy.overwritingMethodWrapper (/home/persist/repos/work/vazio/gateway-coin/node_modules/chai/lib/chai/utils/overwriteMethod.js:78:33)
+      at doAsserterAsyncAndAddThen (/home/persist/repos/work/vazio/gateway-coin/node_modules/chai-as-promised/lib/chai-as-promised.js:289:22)
+      at Proxy.<anonymous> (/home/persist/repos/work/vazio/gateway-coin/node_modules/chai-as-promised/lib/chai-as-promised.js:255:20)
+      at Proxy.overwritingMethodWrapper (/home/persist/repos/work/vazio/gateway-coin/node_modules/chai/lib/chai/utils/overwriteMethod.js:78:33)
+      at Context.<anonymous> (/home/persist/repos/work/vazio/gateway-coin/test/EconomicEngine.test.ts:487:38)
+
+  14) EconomicEngine
+       Edge Cases and Error Handling
+         Should reject unauthorized calls:
+     AssertionError: Expected transaction to be reverted with reason 'Ownable: caller is not the owner', but it reverted with a custom error
+      at async Context.<anonymous> (test/EconomicEngine.test.ts:518:7)
+
+  15) EconomicEngine
+       Integration Tests
+         Should integrate all components seamlessly:
+
+      AssertionError: expected 0 to be above 0.
+      + expected - actual
+
+
+      at Context.<anonymous> (test/EconomicEngine.test.ts:541:37)
+
+  16) EconomicEngine
+       Integration Tests
+         Should handle stress testing scenarios:
+     HardhatError: HH17: The input value cannot be normalized to a BigInt: Unsupported type undefined
+      at normalizeToBigInt (/home/persist/repos/work/vazio/gateway-coin/node_modules/hardhat/src/common/bigInt.ts:47:13)
+      at Proxy.<anonymous> (/home/persist/repos/work/vazio/gateway-coin/node_modules/@nomicfoundation/hardhat-chai-matchers/src/internal/bigNumber.ts:171:41)
+      at Proxy.overwritingMethodWrapper (/home/persist/repos/work/vazio/gateway-coin/node_modules/chai/lib/chai/utils/overwriteMethod.js:78:33)
+      at doAsserterAsyncAndAddThen (/home/persist/repos/work/vazio/gateway-coin/node_modules/chai-as-promised/lib/chai-as-promised.js:289:22)
+      at Proxy.<anonymous> (/home/persist/repos/work/vazio/gateway-coin/node_modules/chai-as-promised/lib/chai-as-promised.js:255:20)
+      at Proxy.overwritingMethodWrapper (/home/persist/repos/work/vazio/gateway-coin/node_modules/chai/lib/chai/utils/overwriteMethod.js:78:33)
+      at Context.<anonymous> (/home/persist/repos/work/vazio/gateway-coin/test/EconomicEngine.test.ts:591:49)
+
+  17) End-to-End User Journey Tests
+       Complete Onboarding to Withdrawal Flow
+         Should handle complete user onboarding and first transaction:
+     TypeError: stripeIntegration.connect(...).setKYCStatus is not a function
+      at Context.<anonymous> (test/e2e/FullUserJourney.test.ts:24:46)
+
+  18) End-to-End User Journey Tests
+       Complete Onboarding to Withdrawal Flow
+         Should handle active user lifecycle with multiple transactions:
+     TypeError: economicEngine.connect(...).startGracePeriod is not a function
+      at Context.<anonymous> (test/e2e/FullUserJourney.test.ts:98:43)
+
+  19) End-to-End User Journey Tests
+       Complete Onboarding to Withdrawal Flow
+         Should handle user redemption and withdrawal process:
+     Error: VM Exception while processing transaction: reverted with custom error 'ERC20InsufficientAllowance("0x38a024C0b412B9d1db8BC398140D00F5Af3093D4", 0, 10000000000)'
+    at MockERC20._spendAllowance (@openzeppelin/contracts/token/ERC20/ERC20.sol:298)
+    at StabilityPool._callOptionalReturn (@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol:176)
+    at StabilityPool.safeTransferFrom (@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol:42)
+    at EdrProviderWrapper.request (node_modules/hardhat/src/internal/hardhat-network/provider/provider.ts:359:41)
+    at async HardhatEthersSigner.sendTransaction (node_modules/@nomicfoundation/hardhat-ethers/src/signers.ts:181:18)
+    at async send (node_modules/ethers/src.ts/contract/contract.ts:313:20)
+    at async Proxy.contributeReserves (node_modules/ethers/src.ts/contract/contract.ts:352:16)
+    at async Context.<anonymous> (test/e2e/FullUserJourney.test.ts:183:7)
+  
+
+  20) End-to-End User Journey Tests
+       Cross-Chain User Experience
+         Should handle cross-chain token transfers seamlessly:
+     Error: VM Exception while processing transaction: reverted with custom error 'NoPeer(109)'
+    at GatewayCoin._getPeerOrRevert (@layerzerolabs/lz-evm-oapp-v2/contracts/oapp/OAppCore.sol:69)
+    at GatewayCoin._quote (@layerzerolabs/lz-evm-oapp-v2/contracts/oapp/OAppSender.sol:55)
+    at EdrProviderWrapper.request (node_modules/hardhat/src/internal/hardhat-network/provider/provider.ts:359:41)
+    at async staticCallResult (node_modules/ethers/src.ts/contract/contract.ts:337:22)
+    at async staticCall (node_modules/ethers/src.ts/contract/contract.ts:303:24)
+    at async Proxy.quoteSend (node_modules/ethers/src.ts/contract/contract.ts:351:41)
+    at async Context.<anonymous> (test/e2e/FullUserJourney.test.ts:270:28)
+  
+
+  21) End-to-End User Journey Tests
+       Cross-Chain User Experience
+         Should maintain economic consistency across all chains:
+     Error: VM Exception while processing transaction: reverted with reason string 'Demurrage rate too high'
+    at SimpleEconomicEngine.updateEconomicParameters (contracts/mocks/SimpleEconomicEngine.sol:193)
+    at EdrProviderWrapper.request (node_modules/hardhat/src/internal/hardhat-network/provider/provider.ts:359:41)
+    at async HardhatEthersSigner.sendTransaction (node_modules/@nomicfoundation/hardhat-ethers/src/signers.ts:181:18)
+    at async send (node_modules/ethers/src.ts/contract/contract.ts:313:20)
+    at async Proxy.updateEconomicParameters (node_modules/ethers/src.ts/contract/contract.ts:352:16)
+    at async Context.<anonymous> (test/e2e/FullUserJourney.test.ts:336:7)
+  
+
+  22) End-to-End User Journey Tests
+       Stress Test Scenarios
+         Should handle high-frequency trading scenario:
+
+      AssertionError: expected 0 to be above 0.
+      + expected - actual
+
+
+      at Context.<anonymous> (test/e2e/FullUserJourney.test.ts:431:42)
+
+  23) End-to-End User Journey Tests
+       Stress Test Scenarios
+         Should handle large-scale user onboarding wave:
+     TypeError: stripeIntegration.connect(...).setKYCStatus is not a function
+      at Context.<anonymous> (test/e2e/FullUserJourney.test.ts:475:48)
+
+  24) End-to-End User Journey Tests
+       Stress Test Scenarios
+         Should maintain stability during market crash simulation:
+     TypeError: stabilityPool.shouldIntervene is not a function
+      at Context.<anonymous> (test/e2e/FullUserJourney.test.ts:599:53)
+
+  25) End-to-End User Journey Tests
+       Multi-User Interaction Scenarios
+         Should handle complex multi-user economic interactions:
+
+      AssertionError: expected 0 to be above 0.
+      + expected - actual
+
+
+      at Context.<anonymous> (test/e2e/FullUserJourney.test.ts:747:49)
+
+  26) Fiat Integration Tests
+       USD to GATE Conversion Flow
+         Should mint GATE tokens for USD deposits:
+     TypeError: stripeIntegration.connect(...).recordFiatDeposit is not a function
+      at Context.<anonymous> (test/integration/FiatIntegration.test.ts:19:46)
+
+  27) Fiat Integration Tests
+       USD to GATE Conversion Flow
+         Should handle GATE to USD redemption correctly:
+     TypeError: stripeIntegration.connect(...).redeemForFiat is not a function
+      at Context.<anonymous> (test/integration/FiatIntegration.test.ts:56:46)
+
+  28) Fiat Integration Tests
+       USD to GATE Conversion Flow
+         Should maintain 1:1 peg during high volume conversions:
+     TypeError: stripeIntegration.connect(...).recordFiatDeposit is not a function
+      at Context.<anonymous> (test/integration/FiatIntegration.test.ts:86:48)
+
+  29) Fiat Integration Tests
+       KYC and Compliance Integration
+         Should enforce KYC requirements for large transactions:
+     TypeError: stripeIntegration.connect(...).recordFiatDeposit is not a function
+      at Context.<anonymous> (test/integration/FiatIntegration.test.ts:121:42)
+
+  30) Fiat Integration Tests
+       KYC and Compliance Integration
+         Should track AML compliance metrics:
+     TypeError: stripeIntegration.connect(...).recordFiatDeposit is not a function
+      at Context.<anonymous> (test/integration/FiatIntegration.test.ts:154:48)
+
+  31) Fiat Integration Tests
+       Payment Method Integration
+         Should handle credit card payments correctly:
+     TypeError: stripeIntegration.connect(...).recordCardPayment is not a function
+      at Context.<anonymous> (test/integration/FiatIntegration.test.ts:180:46)
+
+  32) Fiat Integration Tests
+       Payment Method Integration
+         Should handle ACH bank transfers:
+     TypeError: stripeIntegration.connect(...).recordACHPayment is not a function
+      at Context.<anonymous> (test/integration/FiatIntegration.test.ts:208:46)
+
+  33) Fiat Integration Tests
+       Payment Method Integration
+         Should handle payment failures and refunds:
+     TypeError: stripeIntegration.connect(...).recordCardPayment is not a function
+      at Context.<anonymous> (test/integration/FiatIntegration.test.ts:243:46)
+
+  34) Fiat Integration Tests
+       Fiat Backing and Reserves
+         Should maintain full fiat backing of circulating supply:
+     TypeError: stripeIntegration.connect(...).recordFiatDeposit is not a function
+      at Context.<anonymous> (test/integration/FiatIntegration.test.ts:285:48)
+
+  35) Fiat Integration Tests
+       Fiat Backing and Reserves
+         Should handle reserve rebalancing correctly:
+     Error: VM Exception while processing transaction: reverted with custom error 'ERC20InsufficientAllowance("0x38a024C0b412B9d1db8BC398140D00F5Af3093D4", 0, 500000000000)'
+    at MockERC20._spendAllowance (@openzeppelin/contracts/token/ERC20/ERC20.sol:298)
+    at StabilityPool._callOptionalReturn (@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol:176)
+    at StabilityPool.safeTransferFrom (@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol:42)
+    at EdrProviderWrapper.request (node_modules/hardhat/src/internal/hardhat-network/provider/provider.ts:359:41)
+    at async HardhatEthersSigner.sendTransaction (node_modules/@nomicfoundation/hardhat-ethers/src/signers.ts:181:18)
+    at async send (node_modules/ethers/src.ts/contract/contract.ts:313:20)
+    at async Proxy.contributeReserves (node_modules/ethers/src.ts/contract/contract.ts:352:16)
+    at async Context.<anonymous> (test/integration/FiatIntegration.test.ts:319:7)
+  
+
+  36) Fiat Integration Tests
+       Fiat Backing and Reserves
+         Should enforce minimum reserve requirements:
+     TypeError: stripeIntegration.connect(...).redeemForFiat is not a function
+      at Context.<anonymous> (test/integration/FiatIntegration.test.ts:348:42)
+
+  37) Fiat Integration Tests
+       Real-Time Fiat Price Feeds
+         Should handle USD/GATE price fluctuations:
+     TypeError: stripeIntegration.connect(...).recordFiatDeposit is not a function
+      at Context.<anonymous> (test/integration/FiatIntegration.test.ts:375:46)
+
+  38) Fiat Integration Tests
+       Real-Time Fiat Price Feeds
+         Should maintain peg stability during price volatility:
+     TypeError: stabilityPool.shouldIntervene is not a function
+      at Context.<anonymous> (test/integration/FiatIntegration.test.ts:428:53)
+
+  39) Fiat Integration Tests
+       Error Handling and Edge Cases
+         Should handle double-spending prevention:
+     TypeError: stripeIntegration.connect(...).recordFiatDeposit is not a function
+      at Context.<anonymous> (test/integration/FiatIntegration.test.ts:471:46)
+
+  40) Fiat Integration Tests
+       Error Handling and Edge Cases
+         Should handle network failures gracefully:
+     TypeError: stripeIntegration.connect(...).recordPendingPayment is not a function
+      at Context.<anonymous> (test/integration/FiatIntegration.test.ts:496:46)
+
+  41) Fiat Integration Tests
+       Error Handling and Edge Cases
+         Should enforce transaction limits correctly:
+     TypeError: stripeIntegration.connect(...).setUserDailyLimit is not a function
+      at Context.<anonymous> (test/integration/FiatIntegration.test.ts:521:46)
+
+  42) Performance Benchmarks
+       Transaction Throughput Tests
+         Should optimize gas usage for complex economic operations:
+
+      AssertionError: expected 90843 to be at most 80000
+      + expected - actual
+
+      -90843
+      +80000
+      
+      at Context.<anonymous> (test/performance/PerformanceBenchmarks.test.ts:189:54)
+
+  43) Performance Benchmarks
+       Memory and State Management
+         Should optimize storage for economic parameter updates:
+     Error: VM Exception while processing transaction: reverted with reason string 'Demurrage rate too high'
+    at SimpleEconomicEngine.updateEconomicParameters (contracts/mocks/SimpleEconomicEngine.sol:193)
+    at EdrProviderWrapper.request (node_modules/hardhat/src/internal/hardhat-network/provider/provider.ts:359:41)
+    at async HardhatEthersSigner.sendTransaction (node_modules/@nomicfoundation/hardhat-ethers/src/signers.ts:181:18)
+    at async send (node_modules/ethers/src.ts/contract/contract.ts:313:20)
+    at async Proxy.updateEconomicParameters (node_modules/ethers/src.ts/contract/contract.ts:352:16)
+    at async Context.<anonymous> (test/performance/PerformanceBenchmarks.test.ts:306:20)
+  
+
+  44) Performance Benchmarks
+       Cross-Chain Performance
+         Should benchmark cross-chain message processing:
+     TypeError: crossChainSync.connect(...).processInboundMessage is not a function
+      at Context.<anonymous> (test/performance/PerformanceBenchmarks.test.ts:356:56)
+
+  45) Performance Benchmarks
+       Cross-Chain Performance
+         Should handle cross-chain parameter synchronization efficiently:
+     Error: VM Exception while processing transaction: reverted with reason string 'Demurrage rate too high'
+    at SimpleEconomicEngine.updateEconomicParameters (contracts/mocks/SimpleEconomicEngine.sol:193)
+    at EdrProviderWrapper.request (node_modules/hardhat/src/internal/hardhat-network/provider/provider.ts:359:41)
+    at async HardhatEthersSigner.sendTransaction (node_modules/@nomicfoundation/hardhat-ethers/src/signers.ts:181:18)
+    at async send (node_modules/ethers/src.ts/contract/contract.ts:313:20)
+    at async Proxy.updateEconomicParameters (node_modules/ethers/src.ts/contract/contract.ts:352:16)
+    at async Context.<anonymous> (test/performance/PerformanceBenchmarks.test.ts:408:24)
+  
+
+  46) Performance Benchmarks
+       Load Testing and Scalability
+         Should handle peak usage scenarios:
+     TypeError: stripeIntegration.connect(...).recordFiatDeposit is not a function
+      at Context.<anonymous> (test/performance/PerformanceBenchmarks.test.ts:476:46)
+
+  47) Performance Benchmarks
+       Load Testing and Scalability
+         Should maintain consistent performance under sustained load:
+     Error: VM Exception while processing transaction: reverted with reason string 'Insufficient balance after demurrage'
+    at GatewayCoin.transfer (contracts/core/GatewayCoin.sol:78)
+    at GatewayCoin.transfer (contracts/core/GatewayCoin.sol:87)
+    at EdrProviderWrapper.request (node_modules/hardhat/src/internal/hardhat-network/provider/provider.ts:359:41)
+    at async HardhatEthersSigner.sendTransaction (node_modules/@nomicfoundation/hardhat-ethers/src/signers.ts:181:18)
+    at async send (node_modules/ethers/src.ts/contract/contract.ts:313:20)
+    at async Proxy.transfer (node_modules/ethers/src.ts/contract/contract.ts:352:16)
+    at async deployPerformanceTestFixture (test/fixtures/TestFixtures.ts:353:5)
+    at async loadFixture (node_modules/@nomicfoundation/hardhat-network-helpers/src/loadFixture.ts:59:18)
+    at async Context.<anonymous> (test/performance/PerformanceBenchmarks.test.ts:529:23)
+  
+
+  48) Performance Benchmarks
+       Economic Model Performance
+         Should efficiently process complex economic calculations:
+     TypeError: demurrageManager.getFiatActivityData is not a function
+      at Object.operation (test/performance/PerformanceBenchmarks.test.ts:635:45)
+      at Context.<anonymous> (test/performance/PerformanceBenchmarks.test.ts:649:22)
+
+  49) Security Audit Tests
+       Access Control Security
+         Should enforce owner-only functions correctly:
+     TypeError: gatewayCoin.connect(...).mintFromFiat is not a function
+      at Object.call (test/security/SecurityAudit.test.ts:24:50)
+      at Context.<anonymous> (test/security/SecurityAudit.test.ts:46:27)
+
+  50) Security Audit Tests
+       Smart Contract Vulnerabilities
+         Should prevent reentrancy attacks:
+     HardhatError: HH700: Artifact for contract "MockMaliciousContract" not found. 
+      at Artifacts._handleWrongArtifactForContractName (/home/persist/repos/work/vazio/gateway-coin/node_modules/hardhat/src/internal/artifacts.ts:721:11)
+      at Artifacts._getArtifactPathFromFiles (/home/persist/repos/work/vazio/gateway-coin/node_modules/hardhat/src/internal/artifacts.ts:852:19)
+      at Artifacts._getArtifactPath (/home/persist/repos/work/vazio/gateway-coin/node_modules/hardhat/src/internal/artifacts.ts:516:21)
+      at async Artifacts.readArtifact (/home/persist/repos/work/vazio/gateway-coin/node_modules/hardhat/src/internal/artifacts.ts:71:26)
+      at async getContractFactory (/home/persist/repos/work/vazio/gateway-coin/node_modules/@nomicfoundation/hardhat-ethers/src/internal/helpers.ts:120:22)
+      at async Context.<anonymous> (/home/persist/repos/work/vazio/gateway-coin/test/security/SecurityAudit.test.ts:99:41)
+
+  51) Security Audit Tests
+       Smart Contract Vulnerabilities
+         Should prevent integer overflow/underflow:
+     AssertionError: Expected transaction to be reverted with custom error 'ERC20InsufficientBalance', but it reverted with reason 'Insufficient balance after demurrage'
+      at async Context.<anonymous> (test/security/SecurityAudit.test.ts:119:7)
+
+  52) Security Audit Tests
+       Smart Contract Vulnerabilities
+         Should validate input parameters correctly:
+     AssertionError: Expected transaction to be reverted
+      at async Context.<anonymous> (test/security/SecurityAudit.test.ts:177:9)
+
+  53) Security Audit Tests
+       Smart Contract Vulnerabilities
+         Should handle edge cases in mathematical calculations:
+     AssertionError: expected 0n to be a finite number
+      at Context.<anonymous> (test/security/SecurityAudit.test.ts:199:30)
+
+  54) Security Audit Tests
+       Economic Attack Vectors
+         Should prevent flash loan attacks on stability pool:
+     HardhatError: HH700: Artifact for contract "MockFlashLoanAttacker" not found. 
+      at Artifacts._handleWrongArtifactForContractName (/home/persist/repos/work/vazio/gateway-coin/node_modules/hardhat/src/internal/artifacts.ts:721:11)
+      at Artifacts._getArtifactPathFromFiles (/home/persist/repos/work/vazio/gateway-coin/node_modules/hardhat/src/internal/artifacts.ts:852:19)
+      at Artifacts._getArtifactPath (/home/persist/repos/work/vazio/gateway-coin/node_modules/hardhat/src/internal/artifacts.ts:516:21)
+      at async Artifacts.readArtifact (/home/persist/repos/work/vazio/gateway-coin/node_modules/hardhat/src/internal/artifacts.ts:71:26)
+      at async getContractFactory (/home/persist/repos/work/vazio/gateway-coin/node_modules/@nomicfoundation/hardhat-ethers/src/internal/helpers.ts:120:22)
+      at async Context.<anonymous> (/home/persist/repos/work/vazio/gateway-coin/test/security/SecurityAudit.test.ts:209:38)
+
+  55) Security Audit Tests
+       Economic Attack Vectors
+         Should detect and prevent MEV sandwich attacks:
+
+      AssertionError: expected 0 to be above 500.
+      + expected - actual
+
+      -0
+      +500
+      
+      at Context.<anonymous> (test/security/SecurityAudit.test.ts:250:55)
+
+  56) Security Audit Tests
+       Economic Attack Vectors
+         Should prevent governance token manipulation:
+     AssertionError: Expected transaction to be reverted with custom error 'OwnableUnauthorizedAccount', but it reverted with reason 'Unauthorized'
+      at async Context.<anonymous> (test/security/SecurityAudit.test.ts:267:7)
+
+  57) Security Audit Tests
+       Cross-Chain Security
+         Should validate cross-chain message authenticity:
+     Error: no matching fragment (operation="fragment", info={ "args": [ 999, "0x0000000000000000000000000000000000000000", 1, "0x00000000000000000000000070997970c51812dc3a010c7d01b50e0d17dc79c800000000000000000000000000000000000000000000d3c21bcecceda1000000" ], "key": "lzReceive" }, code=UNSUPPORTED_OPERATION, version=6.15.0)
+      at makeError (node_modules/ethers/src.ts/utils/errors.ts:698:21)
+      at assert (node_modules/ethers/src.ts/utils/errors.ts:719:25)
+      at getFragment (node_modules/ethers/src.ts/contract/contract.ts:270:15)
+      at Proxy.lzReceive (node_modules/ethers/src.ts/contract/contract.ts:350:26)
+      at Context.<anonymous> (test/security/SecurityAudit.test.ts:332:21)
+
+  58) Security Audit Tests
+       Cross-Chain Security
+         Should handle cross-chain communication failures gracefully:
+     TypeError: crossChainSync.connect(...).handleFailedMessage is not a function
+      at Context.<anonymous> (test/security/SecurityAudit.test.ts:367:43)
+
+  59) Security Audit Tests
+       Data Privacy and Encryption
+         Should protect sensitive user data:
+     TypeError: stripeIntegration.connect(...).recordFiatDeposit is not a function
+      at Context.<anonymous> (test/security/SecurityAudit.test.ts:387:57)
+
+  60) Security Audit Tests
+       Data Privacy and Encryption
+         Should validate encrypted communication channels:
+     TypeError: stripeIntegration.connect(...).storeEncryptedData is not a function
+      at Context.<anonymous> (test/security/SecurityAudit.test.ts:411:46)
+
+  61) Security Audit Tests
+       DOS and Rate Limiting
+         Should resist denial of service attacks:
+
+      AssertionError: expected 50990000000000000000000 to be below 1000000000000000000000.
+      + expected - actual
+
+      -50990000000000000000000
+      +1000000000000000000000
+      
+      at Context.<anonymous> (test/security/SecurityAudit.test.ts:437:29)
+
+  62) Security Audit Tests
+       DOS and Rate Limiting
+         Should implement rate limiting for critical functions:
+     TypeError: stripeIntegration.connect(...).recordFiatDeposit is not a function
+      at Context.<anonymous> (test/security/SecurityAudit.test.ts:453:48)
+
+  63) Security Audit Tests
+       Emergency Response Security
+         Should handle security incidents properly:
+     AssertionError: expected ContractTransactionResponse{ …(21) } to be true
+      at Context.<anonymous> (test/security/SecurityAudit.test.ts:508:27)
+
+  64) Security Audit Tests
+       Compliance and Regulatory Security
+         Should enforce AML compliance limits:
+     TypeError: stripeIntegration.connect(...).setUserDailyLimit is not a function
+      at Context.<anonymous> (test/security/SecurityAudit.test.ts:549:46)
+
+  65) Security Audit Tests
+       Compliance and Regulatory Security
+         Should maintain transaction monitoring for suspicious activity:
+
+      AssertionError: expected 0 to be above 500.
+      + expected - actual
+
+      -0
+      +500
+      
+      at Context.<anonymous> (test/security/SecurityAudit.test.ts:597:48)
+
+  66) Security Audit Tests
+       Compliance and Regulatory Security
+         Should enforce data retention and privacy policies:
+     TypeError: stripeIntegration.connect(...).recordFiatDeposit is not a function
+      at Context.<anonymous> (test/security/SecurityAudit.test.ts:607:46)
+
+  67) Economic Model Stress Testing
+       Demurrage System Stress Tests
+         Should handle extreme dormancy scenarios:
+     Error: VM Exception while processing transaction: reverted with reason string 'Insufficient balance after demurrage'
+    at GatewayCoin.transfer (contracts/core/GatewayCoin.sol:78)
+    at GatewayCoin.transfer (contracts/core/GatewayCoin.sol:87)
+    at EdrProviderWrapper.request (node_modules/hardhat/src/internal/hardhat-network/provider/provider.ts:359:41)
+    at async HardhatEthersSigner.sendTransaction (node_modules/@nomicfoundation/hardhat-ethers/src/signers.ts:181:18)
+    at async send (node_modules/ethers/src.ts/contract/contract.ts:313:20)
+    at async Proxy.transfer (node_modules/ethers/src.ts/contract/contract.ts:352:16)
+    at async Context.<anonymous> (test/stress/EconomicStressTesting.test.ts:24:9)
+  
+
+  68) Economic Model Stress Testing
+       Demurrage System Stress Tests
+         Should maintain stability during extreme demurrage scenarios:
+     Error: VM Exception while processing transaction: reverted with reason string 'Insufficient balance after demurrage'
+    at GatewayCoin.transfer (contracts/core/GatewayCoin.sol:78)
+    at GatewayCoin.transfer (contracts/core/GatewayCoin.sol:87)
+    at EdrProviderWrapper.request (node_modules/hardhat/src/internal/hardhat-network/provider/provider.ts:359:41)
+    at async HardhatEthersSigner.sendTransaction (node_modules/@nomicfoundation/hardhat-ethers/src/signers.ts:181:18)
+    at async send (node_modules/ethers/src.ts/contract/contract.ts:313:20)
+    at async Proxy.transfer (node_modules/ethers/src.ts/contract/contract.ts:352:16)
+    at async Context.<anonymous> (test/stress/EconomicStressTesting.test.ts:156:7)
+  
+
+  69) Economic Model Stress Testing
+       Anti-Speculation System Stress Tests
+         Should handle coordinated speculation attacks:
+
+      AssertionError: expected +0 to be at least 0.7
+      + expected - actual
+
+      -0
+      +0.7
+      
+      at Context.<anonymous> (test/stress/EconomicStressTesting.test.ts:272:54)
+
+  70) Economic Model Stress Testing
+       Anti-Speculation System Stress Tests
+         Should resist wash trading and circular trading patterns:
+     TypeError: antiSpeculationEngine.getAccountFlags is not a function
+      at Context.<anonymous> (test/stress/EconomicStressTesting.test.ts:332:51)
+
+  71) Economic Model Stress Testing
+       Anti-Speculation System Stress Tests
+         Should handle volume manipulation attempts:
+     Error: VM Exception while processing transaction: reverted with reason string 'Insufficient balance after demurrage'
+    at GatewayCoin.transfer (contracts/core/GatewayCoin.sol:78)
+    at GatewayCoin.transfer (contracts/core/GatewayCoin.sol:87)
+    at EdrProviderWrapper.request (node_modules/hardhat/src/internal/hardhat-network/provider/provider.ts:359:41)
+    at async HardhatEthersSigner.sendTransaction (node_modules/@nomicfoundation/hardhat-ethers/src/signers.ts:181:18)
+    at async send (node_modules/ethers/src.ts/contract/contract.ts:313:20)
+    at async Proxy.transfer (node_modules/ethers/src.ts/contract/contract.ts:352:16)
+    at async Context.<anonymous> (test/stress/EconomicStressTesting.test.ts:381:7)
+  
+
+  72) Economic Model Stress Testing
+       Cross-Chain Stress Testing
+         Should handle cross-chain congestion and failures:
+
+      AssertionError: expected +0 to be at least 0.5
+      + expected - actual
+
+      -0
+      +0.5
+      
+      at Context.<anonymous> (test/stress/EconomicStressTesting.test.ts:551:33)
+
+  73) Economic Model Stress Testing
+       Liquidity and Stability Pool Stress Tests
+         Should handle extreme liquidity drain scenarios:
+     Error: VM Exception while processing transaction: reverted with custom error 'ERC20InsufficientAllowance("0x38a024C0b412B9d1db8BC398140D00F5Af3093D4", 0, 5000000000000)'
+    at MockERC20._spendAllowance (@openzeppelin/contracts/token/ERC20/ERC20.sol:298)
+    at StabilityPool._callOptionalReturn (@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol:176)
+    at StabilityPool.safeTransferFrom (@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol:42)
+    at EdrProviderWrapper.request (node_modules/hardhat/src/internal/hardhat-network/provider/provider.ts:359:41)
+    at async HardhatEthersSigner.sendTransaction (node_modules/@nomicfoundation/hardhat-ethers/src/signers.ts:181:18)
+    at async send (node_modules/ethers/src.ts/contract/contract.ts:313:20)
+    at async Proxy.contributeReserves (node_modules/ethers/src.ts/contract/contract.ts:352:16)
+    at async Context.<anonymous> (test/stress/EconomicStressTesting.test.ts:729:7)
+  
+
+  74) Economic Model Stress Testing
+       Liquidity and Stability Pool Stress Tests
+         Should handle stability pool manipulation attacks:
+     Error: VM Exception while processing transaction: reverted with custom error 'ERC20InsufficientAllowance("0x38a024C0b412B9d1db8BC398140D00F5Af3093D4", 0, 1000000000000)'
+    at MockERC20._spendAllowance (@openzeppelin/contracts/token/ERC20/ERC20.sol:298)
+    at StabilityPool._callOptionalReturn (@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol:176)
+    at StabilityPool.safeTransferFrom (@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol:42)
+    at EdrProviderWrapper.request (node_modules/hardhat/src/internal/hardhat-network/provider/provider.ts:359:41)
+    at async HardhatEthersSigner.sendTransaction (node_modules/@nomicfoundation/hardhat-ethers/src/signers.ts:181:18)
+    at async send (node_modules/ethers/src.ts/contract/contract.ts:313:20)
+    at async Proxy.contributeReserves (node_modules/ethers/src.ts/contract/contract.ts:352:16)
+    at async Context.<anonymous> (test/stress/EconomicStressTesting.test.ts:836:7)
+  
+
+
+

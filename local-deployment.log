@@ -1,0 +1,43 @@
+🚀 Deploying Gateway Coin to Local Hardhat Network...
+
+📍 Deployer address: 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+📦 Deploying contracts...
+
+1️⃣ Deploying MathUtils library...
+✅ MathUtils deployed to: 0x70f60dC251368FE65Ff2043faa34D167c522e0e0
+
+2️⃣ Deploying MockLZEndpointV2...
+✅ MockLZEndpointV2 deployed to: 0xed282808c99020EF027F582f04F8E8B882483Bcb
+
+3️⃣ Deploying GatewayCoin (Main Contract)...
+✅ GatewayCoin deployed to: 0xaFC8847AAdf364caDf261E24cc47ACB8D0DE9E24
+📍 Internal DemurrageManager: 0x9d340F16003828FA4c7404288773cAceD3faed4e
+📍 Internal AntiSpeculationEngine: 0xB6985Bc6e9440841Ee801Cfa167624F5df660230
+
+🧪 Testing basic functionality...
+- Deployer GATE balance: 1000000.0
+- Testing transfer of 100.0 GATE to 0x70997970C51812dc3A010C7d01b50e0d17dc79C8...
+✅ Transfer successful! Recipient balance: 100.0
+
+💾 Deployment addresses saved to: /home/persist/repos/work/vazio/gateway-coin/deployments/localhost.json
+
+============================================================
+🎉 LOCAL DEPLOYMENT COMPLETE!
+============================================================
+
+📋 Contract Addresses:
+  GatewayCoin: 0xaFC8847AAdf364caDf261E24cc47ACB8D0DE9E24
+  MockLZEndpointV2: 0xed282808c99020EF027F582f04F8E8B882483Bcb
+  MathUtils: 0x70f60dC251368FE65Ff2043faa34D167c522e0e0
+
+📋 Internal Components:
+  DemurrageManager: 0x9d340F16003828FA4c7404288773cAceD3faed4e
+  AntiSpeculationEngine: 0xB6985Bc6e9440841Ee801Cfa167624F5df660230
+
+✅ All core functionality verified!
+
+⚡ Next Steps:
+  1. Get Sepolia ETH from faucet: https://sepoliafaucet.com
+  2. Deploy to Sepolia: npm run deploy:sepolia
+  3. Configure LayerZero endpoints
+  4. Deploy to other testnets

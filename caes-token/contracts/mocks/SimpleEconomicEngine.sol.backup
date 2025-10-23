@@ -1,0 +1,67 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.22;
+
+import "@openzeppelin/contracts/access/Ownable.sol";
+
+/**
+ * @title SimpleEconomicEngine
+ * @dev Simple mock for EconomicEngine to enable testing infrastructure
+ * This is a minimal implementation to unblock integration testing
+ */
+contract SimpleEconomicEngine is Ownable {
+    
+    constructor(
+        address _owner,
+        address, // _demurrageManager (unused in mock)
+        address, // _antiSpeculationEngine (unused in mock)
+        address  // _stabilityPool (unused in mock)
+    ) Ownable(_owner) {
+        // Minimal mock initialization
+    }
+    
+    // Minimal functions needed for testing
+    function processTransaction(
+        address, // from
+        address, // to
+        uint256, // amount
+        uint8    // activityType
+    ) external pure returns (uint256) {
+        return 0; // No fee for testing
+    }
+    
+    function getCurrentPrice() external pure returns (uint256) {
+        return 1e18; // Always return $1.00 for testing
+    }
+    
+    function getNetworkHealthIndex() external pure returns (uint256) {
+        return 1e18; // 100% health for testing
+    }
+    
+    function adjustParameters() external {
+        // Mock implementation - does nothing
+    }
+    
+    function addEmergencyOperator(address) external {
+        // Mock implementation - does nothing
+    }
+    
+    function removeEmergencyOperator(address) external {
+        // Mock implementation - does nothing
+    }
+    
+    function setAccountExemption(address, bool) external {
+        // Mock implementation - does nothing
+    }
+    
+    function isAccountExempt(address) external pure returns (bool) {
+        return false; // No exemptions in mock
+    }
+    
+    function getCurrentDemurrageRate(address) external pure returns (uint256) {
+        return 50; // 0.5% for testing
+    }
+    
+    function getSpeculationRiskScore(address) external pure returns (uint256) {
+        return 0; // No risk in mock
+    }
+}

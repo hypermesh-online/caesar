@@ -1,0 +1,1424 @@
+
+> gateway-coin@1.0.0 test
+> hardhat test
+
+
+
+  Demurrage Bug Fixes
+Initial Balance: 1000.0 GATE
+Demurrage after 1 day: 11.928 GATE
+    ✔ Should correctly convert seconds to hours for demurrage calculation
+User1 balance after transfer: 876.285696 GATE
+Stability pool balance: 23.714304 GATE
+    ✔ Should allow transfers after demurrage application
+First demurrage: 11.928 GATE
+Second demurrage (should be 0): 0.0 GATE
+    ✔ Should not apply demurrage multiple times for same time period
+    ✔ Should handle small time periods correctly
+
+  EconomicEngine
+    Deployment
+      1) Should deploy with correct initial parameters
+      2) Should have correct component addresses
+    Demurrage Calculations
+      3) Should calculate demurrage correctly with exponential decay
+      4) Should apply fiat activity discount correctly
+      5) Should handle exempt accounts correctly
+    Anti-Speculation Detection
+      6) Should detect rapid trading patterns
+      7) Should detect volume concentration risk
+      8) Should apply progressive penalties for repeat offenders
+      9) Should detect wash trading patterns
+    Stability Pool Operations
+      ✔ Should receive and manage penalty funds
+      10) Should execute AMM interventions for price stability
+      11) Should calculate reserve ratios correctly
+      12) Should handle emergency interventions
+    Stability Maintenance
+      13) Should maintain peg stability through interventions
+      14) Should rebalance reserves when needed
+    Economic Health Monitoring
+      15) Should calculate and update health metrics
+      16) Should track system health over time
+    Emergency Controls
+      17) Should activate emergency mode correctly
+      18) Should allow emergency operators to trigger emergency mode
+      19) Should deactivate emergency mode and restore normal operation
+    Parameter Updates
+      20) Should update economic parameters with validation
+      21) Should reject invalid parameter updates
+    Fiat Integration
+      22) Should record fiat activity correctly
+      23) Should validate fiat backing requirements
+    Performance and Gas Optimization
+      24) Should handle batch operations efficiently
+      25) Should maintain reasonable gas costs for complex calculations
+    Edge Cases and Error Handling
+      26) Should handle zero balances correctly
+      27) Should handle maximum values without overflow
+      28) Should reject unauthorized calls
+    Integration Tests
+      29) Should integrate all components seamlessly
+      30) Should handle stress testing scenarios
+
+  GatewayCoin
+    Deployment
+      ✔ Should set the right owner
+      ✔ Should assign the total supply to the owner
+      ✔ Should have correct name, symbol and decimals
+      ✔ Should initialize epoch correctly
+      ✔ Should deploy demurrage manager and anti-speculation engine
+    Basic Token Operations
+      ✔ Should transfer tokens between accounts
+      ✔ Should fail if sender doesn't have enough tokens
+      ✔ Should update account activity on transfer
+    Demurrage Functionality
+      ✔ Should calculate demurrage correctly
+      ✔ Should apply demurrage on transfer
+      ✔ Should not apply demurrage to exempt accounts
+    Anti-Speculation Functionality
+      ✔ Should calculate speculation penalty for rapid trades
+    Epoch Management
+      ✔ Should advance epoch after duration
+      ✔ Should not advance epoch before duration
+    Stability Pool
+      ✔ Should allow contributions to stability pool
+      ✔ Should allow owner to withdraw from stability pool
+      ✔ Should not allow non-owner to withdraw from stability pool
+    Network Health Metrics
+      ✔ Should calculate network health index
+      ✔ Should track liquidity ratio
+      ✔ Should track active participants
+    Rebase Functionality
+      ✔ Should check rebase conditions
+      ✔ Should get rebase ratio
+    Access Control
+      ✔ Should allow owner to set configurations
+      ✔ Should not allow non-owner to set configurations
+      ✔ Should allow owner to set account exemptions
+
+  End-to-End User Journey Tests
+    Complete Onboarding to Withdrawal Flow
+Deploying mock contracts...
+Deploying core contracts...
+Deploying main GatewayCoin contract...
+Setting up initial state and permissions...
+      31) Should handle complete user onboarding and first transaction
+Deploying mock contracts...
+Deploying core contracts...
+Deploying main GatewayCoin contract...
+Setting up initial state and permissions...
+      32) Should handle active user lifecycle with multiple transactions
+Deploying mock contracts...
+Deploying core contracts...
+Deploying main GatewayCoin contract...
+Setting up initial state and permissions...
+      33) Should handle user redemption and withdrawal process
+    Cross-Chain User Experience
+Deploying mock contracts...
+Deploying core contracts...
+Deploying main GatewayCoin contract...
+Setting up initial state and permissions...
+      34) Should handle cross-chain token transfers seamlessly
+Deploying mock contracts...
+Deploying core contracts...
+Deploying main GatewayCoin contract...
+Setting up initial state and permissions...
+      35) Should maintain economic consistency across all chains
+    Stress Test Scenarios
+Deploying mock contracts...
+Deploying core contracts...
+Deploying main GatewayCoin contract...
+Setting up initial state and permissions...
+      36) Should handle high-frequency trading scenario
+Deploying mock contracts...
+Deploying core contracts...
+Deploying main GatewayCoin contract...
+Setting up initial state and permissions...
+      37) Should handle large-scale user onboarding wave
+Deploying mock contracts...
+Deploying core contracts...
+Deploying main GatewayCoin contract...
+Setting up initial state and permissions...
+      38) Should maintain stability during market crash simulation
+    Multi-User Interaction Scenarios
+Deploying mock contracts...
+Deploying core contracts...
+Deploying main GatewayCoin contract...
+Setting up initial state and permissions...
+      39) Should handle complex multi-user economic interactions
+
+  Fiat Integration Tests
+    USD to GATE Conversion Flow
+Deploying mock contracts...
+Deploying core contracts...
+Deploying main GatewayCoin contract...
+Setting up initial state and permissions...
+      40) Should mint GATE tokens for USD deposits
+Deploying mock contracts...
+Deploying core contracts...
+Deploying main GatewayCoin contract...
+Setting up initial state and permissions...
+      41) Should handle GATE to USD redemption correctly
+Deploying mock contracts...
+Deploying core contracts...
+Deploying main GatewayCoin contract...
+Setting up initial state and permissions...
+      42) Should maintain 1:1 peg during high volume conversions
+    KYC and Compliance Integration
+Deploying mock contracts...
+Deploying core contracts...
+Deploying main GatewayCoin contract...
+Setting up initial state and permissions...
+      43) Should enforce KYC requirements for large transactions
+Deploying mock contracts...
+Deploying core contracts...
+Deploying main GatewayCoin contract...
+Setting up initial state and permissions...
+      44) Should track AML compliance metrics
+    Payment Method Integration
+Deploying mock contracts...
+Deploying core contracts...
+Deploying main GatewayCoin contract...
+Setting up initial state and permissions...
+      45) Should handle credit card payments correctly
+Deploying mock contracts...
+Deploying core contracts...
+Deploying main GatewayCoin contract...
+Setting up initial state and permissions...
+      46) Should handle ACH bank transfers
+Deploying mock contracts...
+Deploying core contracts...
+Deploying main GatewayCoin contract...
+Setting up initial state and permissions...
+      47) Should handle payment failures and refunds
+    Fiat Backing and Reserves
+Deploying mock contracts...
+Deploying core contracts...
+Deploying main GatewayCoin contract...
+Setting up initial state and permissions...
+      48) Should maintain full fiat backing of circulating supply
+Deploying mock contracts...
+Deploying core contracts...
+Deploying main GatewayCoin contract...
+Setting up initial state and permissions...
+      49) Should handle reserve rebalancing correctly
+Deploying mock contracts...
+Deploying core contracts...
+Deploying main GatewayCoin contract...
+Setting up initial state and permissions...
+      50) Should enforce minimum reserve requirements
+    Real-Time Fiat Price Feeds
+Deploying mock contracts...
+Deploying core contracts...
+Deploying main GatewayCoin contract...
+Setting up initial state and permissions...
+      51) Should handle USD/GATE price fluctuations
+Deploying mock contracts...
+Deploying core contracts...
+Deploying main GatewayCoin contract...
+Setting up initial state and permissions...
+      52) Should maintain peg stability during price volatility
+    Error Handling and Edge Cases
+Deploying mock contracts...
+Deploying core contracts...
+Deploying main GatewayCoin contract...
+Setting up initial state and permissions...
+      53) Should handle double-spending prevention
+Deploying mock contracts...
+Deploying core contracts...
+Deploying main GatewayCoin contract...
+Setting up initial state and permissions...
+      54) Should handle network failures gracefully
+Deploying mock contracts...
+Deploying core contracts...
+Deploying main GatewayCoin contract...
+Setting up initial state and permissions...
+      55) Should enforce transaction limits correctly
+
+  Performance Benchmarks
+    Transaction Throughput Tests
+Deploying mock contracts...
+Deploying core contracts...
+Deploying main GatewayCoin contract...
+Setting up initial state and permissions...
+      56) Should handle high-volume sequential transactions
+Deploying mock contracts...
+Deploying core contracts...
+Deploying main GatewayCoin contract...
+Setting up initial state and permissions...
+      57) Should maintain performance under concurrent load simulation
+Deploying mock contracts...
+Deploying core contracts...
+Deploying main GatewayCoin contract...
+Setting up initial state and permissions...
+      58) Should optimize gas usage for complex economic operations
+    Memory and State Management
+Deploying mock contracts...
+Deploying core contracts...
+Deploying main GatewayCoin contract...
+Setting up initial state and permissions...
+      59) Should efficiently handle large-scale state updates
+Deploying mock contracts...
+Deploying core contracts...
+Deploying main GatewayCoin contract...
+Setting up initial state and permissions...
+      60) Should optimize storage for economic parameter updates
+    Cross-Chain Performance
+Deploying mock contracts...
+Deploying core contracts...
+Deploying main GatewayCoin contract...
+Setting up initial state and permissions...
+      61) Should benchmark cross-chain message processing
+Deploying mock contracts...
+Deploying core contracts...
+Deploying main GatewayCoin contract...
+Setting up initial state and permissions...
+      62) Should handle cross-chain parameter synchronization efficiently
+    Load Testing and Scalability
+Deploying mock contracts...
+Deploying core contracts...
+Deploying main GatewayCoin contract...
+Setting up initial state and permissions...
+      63) Should handle peak usage scenarios
+Deploying mock contracts...
+Deploying core contracts...
+Deploying main GatewayCoin contract...
+Setting up initial state and permissions...
+      64) Should maintain consistent performance under sustained load
+    Economic Model Performance
+Deploying mock contracts...
+Deploying core contracts...
+Deploying main GatewayCoin contract...
+Setting up initial state and permissions...
+      65) Should efficiently process complex economic calculations
+
+  Security Audit Tests
+    Access Control Security
+Deploying mock contracts...
+Deploying core contracts...
+Deploying main GatewayCoin contract...
+Setting up initial state and permissions...
+      66) Should enforce owner-only functions correctly
+Deploying mock contracts...
+Deploying core contracts...
+Deploying main GatewayCoin contract...
+Setting up initial state and permissions...
+      67) Should prevent unauthorized role escalation
+Deploying mock contracts...
+Deploying core contracts...
+Deploying main GatewayCoin contract...
+Setting up initial state and permissions...
+      68) Should validate multi-signature requirements for critical operations
+    Smart Contract Vulnerabilities
+Deploying mock contracts...
+Deploying core contracts...
+Deploying main GatewayCoin contract...
+Setting up initial state and permissions...
+      69) Should prevent reentrancy attacks
+Deploying mock contracts...
+Deploying core contracts...
+Deploying main GatewayCoin contract...
+Setting up initial state and permissions...
+      70) Should prevent integer overflow/underflow
+Deploying mock contracts...
+Deploying core contracts...
+Deploying main GatewayCoin contract...
+Setting up initial state and permissions...
+      71) Should validate input parameters correctly
+Deploying mock contracts...
+Deploying core contracts...
+Deploying main GatewayCoin contract...
+Setting up initial state and permissions...
+      72) Should handle edge cases in mathematical calculations
+    Economic Attack Vectors
+Deploying mock contracts...
+Deploying core contracts...
+Deploying main GatewayCoin contract...
+Setting up initial state and permissions...
+      73) Should prevent flash loan attacks on stability pool
+Deploying mock contracts...
+Deploying core contracts...
+Deploying main GatewayCoin contract...
+Setting up initial state and permissions...
+      74) Should detect and prevent MEV sandwich attacks
+Deploying mock contracts...
+Deploying core contracts...
+Deploying main GatewayCoin contract...
+Setting up initial state and permissions...
+      75) Should prevent governance token manipulation
+Deploying mock contracts...
+Deploying core contracts...
+Deploying main GatewayCoin contract...
+Setting up initial state and permissions...
+      76) Should resist economic griefing attacks
+    Cross-Chain Security
+Deploying mock contracts...
+Deploying core contracts...
+Deploying main GatewayCoin contract...
+Setting up initial state and permissions...
+      77) Should validate cross-chain message authenticity
+Deploying mock contracts...
+Deploying core contracts...
+Deploying main GatewayCoin contract...
+Setting up initial state and permissions...
+      78) Should prevent cross-chain replay attacks
+Deploying mock contracts...
+Deploying core contracts...
+Deploying main GatewayCoin contract...
+Setting up initial state and permissions...
+      79) Should handle cross-chain communication failures gracefully
+    Data Privacy and Encryption
+Deploying mock contracts...
+Deploying core contracts...
+Deploying main GatewayCoin contract...
+Setting up initial state and permissions...
+      80) Should protect sensitive user data
+Deploying mock contracts...
+Deploying core contracts...
+Deploying main GatewayCoin contract...
+Setting up initial state and permissions...
+      81) Should validate encrypted communication channels
+    DOS and Rate Limiting
+Deploying mock contracts...
+Deploying core contracts...
+Deploying main GatewayCoin contract...
+Setting up initial state and permissions...
+      82) Should resist denial of service attacks
+Deploying mock contracts...
+Deploying core contracts...
+Deploying main GatewayCoin contract...
+Setting up initial state and permissions...
+      83) Should implement rate limiting for critical functions
+    Emergency Response Security
+Deploying mock contracts...
+Deploying core contracts...
+Deploying main GatewayCoin contract...
+Setting up initial state and permissions...
+      84) Should secure emergency mode activation
+Deploying mock contracts...
+Deploying core contracts...
+Deploying main GatewayCoin contract...
+Setting up initial state and permissions...
+      85) Should handle security incidents properly
+Deploying mock contracts...
+Deploying core contracts...
+Deploying main GatewayCoin contract...
+Setting up initial state and permissions...
+      86) Should maintain audit trail for security events
+    Compliance and Regulatory Security
+Deploying mock contracts...
+Deploying core contracts...
+Deploying main GatewayCoin contract...
+Setting up initial state and permissions...
+      87) Should enforce AML compliance limits
+Deploying mock contracts...
+Deploying core contracts...
+Deploying main GatewayCoin contract...
+Setting up initial state and permissions...
+      88) Should maintain transaction monitoring for suspicious activity
+Deploying mock contracts...
+Deploying core contracts...
+Deploying main GatewayCoin contract...
+Setting up initial state and permissions...
+      89) Should enforce data retention and privacy policies
+
+  Economic Model Stress Testing
+    Demurrage System Stress Tests
+Deploying mock contracts...
+Deploying core contracts...
+Deploying main GatewayCoin contract...
+Setting up initial state and permissions...
+      90) Should handle extreme dormancy scenarios
+Deploying mock contracts...
+Deploying core contracts...
+Deploying main GatewayCoin contract...
+Setting up initial state and permissions...
+      91) Should handle mass reactivation after dormancy
+Deploying mock contracts...
+Deploying core contracts...
+Deploying main GatewayCoin contract...
+Setting up initial state and permissions...
+      92) Should maintain stability during extreme demurrage scenarios
+    Anti-Speculation System Stress Tests
+Deploying mock contracts...
+Deploying core contracts...
+Deploying main GatewayCoin contract...
+Setting up initial state and permissions...
+      93) Should handle coordinated speculation attacks
+Deploying mock contracts...
+Deploying core contracts...
+Deploying main GatewayCoin contract...
+Setting up initial state and permissions...
+      94) Should resist wash trading and circular trading patterns
+Deploying mock contracts...
+Deploying core contracts...
+Deploying main GatewayCoin contract...
+Setting up initial state and permissions...
+      95) Should handle volume manipulation attempts
+    Cross-Chain Stress Testing
+Deploying mock contracts...
+Deploying core contracts...
+Deploying main GatewayCoin contract...
+Setting up initial state and permissions...
+      96) Should handle cross-chain congestion and failures
+Deploying mock contracts...
+Deploying core contracts...
+Deploying main GatewayCoin contract...
+Setting up initial state and permissions...
+      97) Should resist cross-chain arbitrage attacks
+    Liquidity and Stability Pool Stress Tests
+Deploying mock contracts...
+Deploying core contracts...
+Deploying main GatewayCoin contract...
+Setting up initial state and permissions...
+      98) Should handle extreme liquidity drain scenarios
+Deploying mock contracts...
+Deploying core contracts...
+Deploying main GatewayCoin contract...
+Setting up initial state and permissions...
+      99) Should handle stability pool manipulation attacks
+
+  GatewayCoin Unit Tests
+    Deployment
+      ✔ Should deploy with correct initial parameters
+      ✔ Should initialize epoch system correctly
+      ✔ Should deploy demurrage manager and anti-speculation engine
+      ✔ Should set initial supply in epoch tracking
+    Token Transfer Mechanics
+      ✔ Should transfer tokens correctly between accounts
+      ✔ Should update account activity on transfers
+      ✔ Should fail on insufficient balance
+      ✔ Should handle zero amount transfers
+    Demurrage System
+Deploying mock contracts...
+Deploying core contracts...
+Deploying main GatewayCoin contract...
+Setting up initial state and permissions...
+      100) Should calculate demurrage for inactive accounts
+Deploying mock contracts...
+Deploying core contracts...
+Deploying main GatewayCoin contract...
+Setting up initial state and permissions...
+      101) Should not apply demurrage during grace period
+Deploying mock contracts...
+Deploying core contracts...
+Deploying main GatewayCoin contract...
+Setting up initial state and permissions...
+      102) Should not apply demurrage to exempt accounts
+Deploying mock contracts...
+Deploying core contracts...
+Deploying main GatewayCoin contract...
+Setting up initial state and permissions...
+      103) Should apply demurrage on transfers after time passes
+    Anti-Speculation Penalties
+Deploying mock contracts...
+Deploying core contracts...
+Deploying main GatewayCoin contract...
+Setting up initial state and permissions...
+      104) Should calculate penalties for rapid trading
+Deploying mock contracts...
+Deploying core contracts...
+Deploying main GatewayCoin contract...
+Setting up initial state and permissions...
+      105) Should apply penalties to stability pool
+    Epoch Management
+      ✔ Should advance epoch after duration passes
+      ✔ Should not advance epoch before duration elapses
+      ✔ Should update epoch supply tracking
+    Stability Pool Operations
+      ✔ Should allow contributions to stability pool
+      ✔ Should allow owner to withdraw from stability pool
+      ✔ Should not allow non-owner to withdraw from stability pool
+    Network Health Metrics
+      ✔ Should calculate network health index
+      ✔ Should track liquidity ratio
+      ✔ Should track active participants
+    Rebase Mechanism
+      ✔ Should check rebase conditions correctly
+      ✔ Should return correct rebase ratio
+      ✔ Should handle rebase timing correctly
+    Access Control
+Deploying mock contracts...
+Deploying core contracts...
+Deploying main GatewayCoin contract...
+Setting up initial state and permissions...
+      106) Should allow owner to set configurations
+Deploying mock contracts...
+Deploying core contracts...
+Deploying main GatewayCoin contract...
+Setting up initial state and permissions...
+      107) Should not allow non-owner to set configurations
+      ✔ Should allow owner to set account exemptions
+      ✔ Should not allow non-owner to set account exemptions
+    Cross-Chain Functionality
+      ✔ Should track supply per chain
+      ✔ Should update cross-chain supply correctly
+    Error Conditions
+      ✔ Should handle overflow conditions gracefully
+      ✔ Should handle zero address transfers
+      ✔ Should handle invalid epoch operations
+
+
+  57 passing (5s)
+  107 failing
+
+  1) EconomicEngine
+       Deployment
+         Should deploy with correct initial parameters:
+     TypeError: economicEngine.getEconomicParameters is not a function
+      at Context.<anonymous> (test/EconomicEngine.test.ts:110:43)
+      at processImmediate (node:internal/timers:505:21)
+
+  2) EconomicEngine
+       Deployment
+         Should have correct component addresses:
+     TypeError: economicEngine.demurrageManager is not a function
+      at Context.<anonymous> (test/EconomicEngine.test.ts:117:35)
+      at processImmediate (node:internal/timers:505:21)
+
+  3) EconomicEngine
+       Demurrage Calculations
+         Should calculate demurrage correctly with exponential decay:
+     TypeError: economicEngine.calculateDemurrage is not a function
+      at Context.<anonymous> (test/EconomicEngine.test.ts:129:50)
+      at processImmediate (node:internal/timers:505:21)
+
+  4) EconomicEngine
+       Demurrage Calculations
+         Should apply fiat activity discount correctly:
+     Error: VM Exception while processing transaction: reverted with reason string 'Unauthorized reporter'
+    at AdvancedDemurrageManager.recordFiatActivity (contracts/core/AdvancedDemurrageManager.sol:223)
+    at EdrProviderWrapper.request (node_modules/hardhat/src/internal/hardhat-network/provider/provider.ts:359:41)
+    at async HardhatEthersSigner.sendTransaction (node_modules/@nomicfoundation/hardhat-ethers/src/signers.ts:181:18)
+    at async send (node_modules/ethers/src.ts/contract/contract.ts:313:20)
+    at async Proxy.recordFiatActivity (node_modules/ethers/src.ts/contract/contract.ts:352:16)
+    at async Context.<anonymous> (test/EconomicEngine.test.ts:152:7)
+  
+
+  5) EconomicEngine
+       Demurrage Calculations
+         Should handle exempt accounts correctly:
+     TypeError: economicEngine.calculateDemurrage is not a function
+      at Context.<anonymous> (test/EconomicEngine.test.ts:180:52)
+
+  6) EconomicEngine
+       Anti-Speculation Detection
+         Should detect rapid trading patterns:
+     AssertionError: expected undefined to be a number or a date
+      at Context.<anonymous> (test/EconomicEngine.test.ts:200:44)
+
+  7) EconomicEngine
+       Anti-Speculation Detection
+         Should detect volume concentration risk:
+     HardhatError: HH17: The input value cannot be normalized to a BigInt: Unsupported type undefined
+      at normalizeToBigInt (/home/persist/repos/work/vazio/gateway-coin/node_modules/hardhat/src/common/bigInt.ts:47:13)
+      at Proxy.<anonymous> (/home/persist/repos/work/vazio/gateway-coin/node_modules/@nomicfoundation/hardhat-chai-matchers/src/internal/bigNumber.ts:171:41)
+      at Proxy.overwritingMethodWrapper (/home/persist/repos/work/vazio/gateway-coin/node_modules/chai/lib/chai/utils/overwriteMethod.js:78:33)
+      at doAsserterAsyncAndAddThen (/home/persist/repos/work/vazio/gateway-coin/node_modules/chai-as-promised/lib/chai-as-promised.js:289:22)
+      at Proxy.<anonymous> (/home/persist/repos/work/vazio/gateway-coin/node_modules/chai-as-promised/lib/chai-as-promised.js:255:20)
+      at Proxy.overwritingMethodWrapper (/home/persist/repos/work/vazio/gateway-coin/node_modules/chai/lib/chai/utils/overwriteMethod.js:78:33)
+      at Context.<anonymous> (/home/persist/repos/work/vazio/gateway-coin/test/EconomicEngine.test.ts:221:38)
+
+  8) EconomicEngine
+       Anti-Speculation Detection
+         Should apply progressive penalties for repeat offenders:
+     HardhatError: HH17: The input value cannot be normalized to a BigInt: Unsupported type undefined
+      at normalizeToBigInt (/home/persist/repos/work/vazio/gateway-coin/node_modules/hardhat/src/common/bigInt.ts:47:13)
+      at Proxy.<anonymous> (/home/persist/repos/work/vazio/gateway-coin/node_modules/@nomicfoundation/hardhat-chai-matchers/src/internal/bigNumber.ts:171:41)
+      at Proxy.overwritingMethodWrapper (/home/persist/repos/work/vazio/gateway-coin/node_modules/chai/lib/chai/utils/overwriteMethod.js:78:33)
+      at doAsserterAsyncAndAddThen (/home/persist/repos/work/vazio/gateway-coin/node_modules/chai-as-promised/lib/chai-as-promised.js:289:22)
+      at Proxy.<anonymous> (/home/persist/repos/work/vazio/gateway-coin/node_modules/chai-as-promised/lib/chai-as-promised.js:255:20)
+      at Proxy.overwritingMethodWrapper (/home/persist/repos/work/vazio/gateway-coin/node_modules/chai/lib/chai/utils/overwriteMethod.js:78:33)
+      at Context.<anonymous> (/home/persist/repos/work/vazio/gateway-coin/test/EconomicEngine.test.ts:237:36)
+
+  9) EconomicEngine
+       Anti-Speculation Detection
+         Should detect wash trading patterns:
+     AssertionError: the given combination of arguments (undefined and string) is invalid for this assertion. You can use an array, a map, an object, a set, a string, or a weakset instead of a string
+      at Context.<anonymous> (test/EconomicEngine.test.ts:257:31)
+
+  10) EconomicEngine
+       Stability Pool Operations
+         Should execute AMM interventions for price stability:
+     Error: VM Exception while processing transaction: reverted with reason string 'AMM router not set'
+    at StabilityPool.executeAMMIntervention (contracts/core/StabilityPool.sol:145)
+    at EdrProviderWrapper.request (node_modules/hardhat/src/internal/hardhat-network/provider/provider.ts:359:41)
+    at async HardhatEthersSigner.sendTransaction (node_modules/@nomicfoundation/hardhat-ethers/src/signers.ts:181:18)
+    at async send (node_modules/ethers/src.ts/contract/contract.ts:313:20)
+    at async Proxy.executeAMMIntervention (node_modules/ethers/src.ts/contract/contract.ts:352:16)
+    at async Context.<anonymous> (test/EconomicEngine.test.ts:281:28)
+  
+
+  11) EconomicEngine
+       Stability Pool Operations
+         Should calculate reserve ratios correctly:
+     Error: VM Exception while processing transaction: reverted with custom error 'ERC20InsufficientAllowance("0x3Aa5ebB10DC797CAC828524e59A333d0A371443c", 0, 100000000000)'
+    at MockERC20._spendAllowance (@openzeppelin/contracts/token/ERC20/ERC20.sol:298)
+    at StabilityPool._callOptionalReturn (@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol:176)
+    at StabilityPool.safeTransferFrom (@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol:42)
+    at EdrProviderWrapper.request (node_modules/hardhat/src/internal/hardhat-network/provider/provider.ts:359:41)
+    at async HardhatEthersSigner.sendTransaction (node_modules/@nomicfoundation/hardhat-ethers/src/signers.ts:181:18)
+    at async send (node_modules/ethers/src.ts/contract/contract.ts:313:20)
+    at async Proxy.contributeReserves (node_modules/ethers/src.ts/contract/contract.ts:352:16)
+    at async Context.<anonymous> (test/EconomicEngine.test.ts:291:7)
+  
+
+  12) EconomicEngine
+       Stability Pool Operations
+         Should handle emergency interventions:
+     AssertionError: expected ContractTransactionResponse{ …(21) } to be true
+      at Context.<anonymous> (test/EconomicEngine.test.ts:307:27)
+
+  13) EconomicEngine
+       Stability Maintenance
+         Should maintain peg stability through interventions:
+     TypeError: economicEngine.maintainPegStability is not a function
+      at Context.<anonymous> (test/EconomicEngine.test.ts:319:43)
+
+  14) EconomicEngine
+       Stability Maintenance
+         Should rebalance reserves when needed:
+     TypeError: economicEngine.rebalanceReserves is not a function
+      at Context.<anonymous> (test/EconomicEngine.test.ts:326:46)
+      at processImmediate (node:internal/timers:505:21)
+
+  15) EconomicEngine
+       Economic Health Monitoring
+         Should calculate and update health metrics:
+     TypeError: economicEngine.monitorEconomicHealth is not a function
+      at Context.<anonymous> (test/EconomicEngine.test.ts:335:44)
+      at processImmediate (node:internal/timers:505:21)
+
+  16) EconomicEngine
+       Economic Health Monitoring
+         Should track system health over time:
+     TypeError: economicEngine.getHealthMetrics is not a function
+      at Context.<anonymous> (test/EconomicEngine.test.ts:343:50)
+      at processImmediate (node:internal/timers:505:21)
+
+  17) EconomicEngine
+       Emergency Controls
+         Should activate emergency mode correctly:
+     TypeError: economicEngine.connect(...).activateEmergencyMode is not a function
+      at Context.<anonymous> (test/EconomicEngine.test.ts:358:43)
+      at processImmediate (node:internal/timers:505:21)
+
+  18) EconomicEngine
+       Emergency Controls
+         Should allow emergency operators to trigger emergency mode:
+     TypeError: economicEngine.connect(...).activateEmergencyMode is not a function
+      at Context.<anonymous> (test/EconomicEngine.test.ts:373:55)
+
+  19) EconomicEngine
+       Emergency Controls
+         Should deactivate emergency mode and restore normal operation:
+     TypeError: economicEngine.connect(...).activateEmergencyMode is not a function
+      at Context.<anonymous> (test/EconomicEngine.test.ts:381:43)
+      at processImmediate (node:internal/timers:505:21)
+
+  20) EconomicEngine
+       Parameter Updates
+         Should update economic parameters with validation:
+     TypeError: economicEngine.connect(...).updateEconomicParameters is not a function
+      at Context.<anonymous> (test/EconomicEngine.test.ts:406:43)
+      at processImmediate (node:internal/timers:505:21)
+
+  21) EconomicEngine
+       Parameter Updates
+         Should reject invalid parameter updates:
+     TypeError: economicEngine.connect(...).updateEconomicParameters is not a function
+      at Context.<anonymous> (test/EconomicEngine.test.ts:426:39)
+      at processImmediate (node:internal/timers:505:21)
+
+  22) EconomicEngine
+       Fiat Integration
+         Should record fiat activity correctly:
+     TypeError: economicEngine.connect(...).recordFiatActivity is not a function
+      at Context.<anonymous> (test/EconomicEngine.test.ts:437:43)
+      at processImmediate (node:internal/timers:505:21)
+
+  23) EconomicEngine
+       Fiat Integration
+         Should validate fiat backing requirements:
+     TypeError: economicEngine.validateFiatBacking is not a function
+      at Context.<anonymous> (test/EconomicEngine.test.ts:448:61)
+      at processImmediate (node:internal/timers:505:21)
+
+  24) EconomicEngine
+       Performance and Gas Optimization
+         Should handle batch operations efficiently:
+     TypeError: economicEngine.calculateDemurrage is not a function
+      at Context.<anonymous> (test/EconomicEngine.test.ts:462:40)
+      at processImmediate (node:internal/timers:505:21)
+
+  25) EconomicEngine
+       Performance and Gas Optimization
+         Should maintain reasonable gas costs for complex calculations:
+     HardhatError: HH17: The input value cannot be normalized to a BigInt: Unsupported type undefined
+      at normalizeToBigInt (/home/persist/repos/work/vazio/gateway-coin/node_modules/hardhat/src/common/bigInt.ts:47:13)
+      at Proxy.<anonymous> (/home/persist/repos/work/vazio/gateway-coin/node_modules/@nomicfoundation/hardhat-chai-matchers/src/internal/bigNumber.ts:171:41)
+      at Proxy.overwritingMethodWrapper (/home/persist/repos/work/vazio/gateway-coin/node_modules/chai/lib/chai/utils/overwriteMethod.js:78:33)
+      at doAsserterAsyncAndAddThen (/home/persist/repos/work/vazio/gateway-coin/node_modules/chai-as-promised/lib/chai-as-promised.js:289:22)
+      at Proxy.<anonymous> (/home/persist/repos/work/vazio/gateway-coin/node_modules/chai-as-promised/lib/chai-as-promised.js:255:20)
+      at Proxy.overwritingMethodWrapper (/home/persist/repos/work/vazio/gateway-coin/node_modules/chai/lib/chai/utils/overwriteMethod.js:78:33)
+      at Context.<anonymous> (/home/persist/repos/work/vazio/gateway-coin/test/EconomicEngine.test.ts:487:38)
+
+  26) EconomicEngine
+       Edge Cases and Error Handling
+         Should handle zero balances correctly:
+     TypeError: economicEngine.calculateDemurrage is not a function
+      at Context.<anonymous> (test/EconomicEngine.test.ts:493:46)
+      at processImmediate (node:internal/timers:505:21)
+
+  27) EconomicEngine
+       Edge Cases and Error Handling
+         Should handle maximum values without overflow:
+     TypeError: economicEngine.calculateDemurrage is not a function
+      at Context.<anonymous> (test/EconomicEngine.test.ts:502:24)
+      at processImmediate (node:internal/timers:505:21)
+
+  28) EconomicEngine
+       Edge Cases and Error Handling
+         Should reject unauthorized calls:
+     TypeError: economicEngine.connect(...).updateEconomicParameters is not a function
+      at Context.<anonymous> (test/EconomicEngine.test.ts:519:39)
+      at processImmediate (node:internal/timers:505:21)
+
+  29) EconomicEngine
+       Integration Tests
+         Should integrate all components seamlessly:
+     TypeError: economicEngine.connect(...).recordFiatActivity is not a function
+      at Context.<anonymous> (test/EconomicEngine.test.ts:534:43)
+
+  30) EconomicEngine
+       Integration Tests
+         Should handle stress testing scenarios:
+     TypeError: economicEngine.monitorEconomicHealth is not a function
+      at Context.<anonymous> (test/EconomicEngine.test.ts:590:50)
+
+  31) End-to-End User Journey Tests
+       Complete Onboarding to Withdrawal Flow
+         Should handle complete user onboarding and first transaction:
+     TypeError: stabilityPool.KEEPER_ROLE is not a function
+      at deployGatewayCoinFixture (test/fixtures/TestFixtures.ts:185:53)
+      at async loadFixture (node_modules/@nomicfoundation/hardhat-network-helpers/src/loadFixture.ts:59:18)
+      at async Context.<anonymous> (test/e2e/FullUserJourney.test.ts:9:23)
+
+  32) End-to-End User Journey Tests
+       Complete Onboarding to Withdrawal Flow
+         Should handle active user lifecycle with multiple transactions:
+     TypeError: stabilityPool.KEEPER_ROLE is not a function
+      at deployGatewayCoinFixture (test/fixtures/TestFixtures.ts:185:53)
+      at async loadFixture (node_modules/@nomicfoundation/hardhat-network-helpers/src/loadFixture.ts:59:18)
+      at async Context.<anonymous> (test/e2e/FullUserJourney.test.ts:79:23)
+
+  33) End-to-End User Journey Tests
+       Complete Onboarding to Withdrawal Flow
+         Should handle user redemption and withdrawal process:
+     TypeError: stabilityPool.KEEPER_ROLE is not a function
+      at deployGatewayCoinFixture (test/fixtures/TestFixtures.ts:185:53)
+      at async loadFixture (node_modules/@nomicfoundation/hardhat-network-helpers/src/loadFixture.ts:59:18)
+      at async Context.<anonymous> (test/e2e/FullUserJourney.test.ts:164:23)
+
+  34) End-to-End User Journey Tests
+       Cross-Chain User Experience
+         Should handle cross-chain token transfers seamlessly:
+     TypeError: stabilityPool.KEEPER_ROLE is not a function
+      at deployGatewayCoinFixture (test/fixtures/TestFixtures.ts:185:53)
+      at async deployCrossChainFixture (test/fixtures/TestFixtures.ts:300:19)
+      at async Context.<anonymous> (test/e2e/FullUserJourney.test.ts:240:23)
+
+  35) End-to-End User Journey Tests
+       Cross-Chain User Experience
+         Should maintain economic consistency across all chains:
+     TypeError: stabilityPool.KEEPER_ROLE is not a function
+      at deployGatewayCoinFixture (test/fixtures/TestFixtures.ts:185:53)
+      at async deployCrossChainFixture (test/fixtures/TestFixtures.ts:300:19)
+      at async Context.<anonymous> (test/e2e/FullUserJourney.test.ts:319:23)
+
+  36) End-to-End User Journey Tests
+       Stress Test Scenarios
+         Should handle high-frequency trading scenario:
+     TypeError: stabilityPool.KEEPER_ROLE is not a function
+      at deployGatewayCoinFixture (test/fixtures/TestFixtures.ts:185:53)
+      at async loadFixture (node_modules/@nomicfoundation/hardhat-network-helpers/src/loadFixture.ts:59:18)
+      at async Context.<anonymous> (test/e2e/FullUserJourney.test.ts:382:23)
+
+  37) End-to-End User Journey Tests
+       Stress Test Scenarios
+         Should handle large-scale user onboarding wave:
+     TypeError: stabilityPool.KEEPER_ROLE is not a function
+      at deployGatewayCoinFixture (test/fixtures/TestFixtures.ts:185:53)
+      at async loadFixture (node_modules/@nomicfoundation/hardhat-network-helpers/src/loadFixture.ts:59:18)
+      at async Context.<anonymous> (test/e2e/FullUserJourney.test.ts:455:23)
+
+  38) End-to-End User Journey Tests
+       Stress Test Scenarios
+         Should maintain stability during market crash simulation:
+     TypeError: stabilityPool.KEEPER_ROLE is not a function
+      at deployGatewayCoinFixture (test/fixtures/TestFixtures.ts:185:53)
+      at async loadFixture (node_modules/@nomicfoundation/hardhat-network-helpers/src/loadFixture.ts:59:18)
+      at async Context.<anonymous> (test/e2e/FullUserJourney.test.ts:544:23)
+
+  39) End-to-End User Journey Tests
+       Multi-User Interaction Scenarios
+         Should handle complex multi-user economic interactions:
+     TypeError: stabilityPool.KEEPER_ROLE is not a function
+      at deployGatewayCoinFixture (test/fixtures/TestFixtures.ts:185:53)
+      at async loadFixture (node_modules/@nomicfoundation/hardhat-network-helpers/src/loadFixture.ts:59:18)
+      at async Context.<anonymous> (test/e2e/FullUserJourney.test.ts:673:23)
+
+  40) Fiat Integration Tests
+       USD to GATE Conversion Flow
+         Should mint GATE tokens for USD deposits:
+     TypeError: stabilityPool.KEEPER_ROLE is not a function
+      at deployGatewayCoinFixture (test/fixtures/TestFixtures.ts:185:53)
+      at async loadFixture (node_modules/@nomicfoundation/hardhat-network-helpers/src/loadFixture.ts:59:18)
+      at async Context.<anonymous> (test/integration/FiatIntegration.test.ts:9:23)
+
+  41) Fiat Integration Tests
+       USD to GATE Conversion Flow
+         Should handle GATE to USD redemption correctly:
+     TypeError: stabilityPool.KEEPER_ROLE is not a function
+      at deployGatewayCoinFixture (test/fixtures/TestFixtures.ts:185:53)
+      at async loadFixture (node_modules/@nomicfoundation/hardhat-network-helpers/src/loadFixture.ts:59:18)
+      at async Context.<anonymous> (test/integration/FiatIntegration.test.ts:39:23)
+
+  42) Fiat Integration Tests
+       USD to GATE Conversion Flow
+         Should maintain 1:1 peg during high volume conversions:
+     TypeError: stabilityPool.KEEPER_ROLE is not a function
+      at deployGatewayCoinFixture (test/fixtures/TestFixtures.ts:185:53)
+      at async loadFixture (node_modules/@nomicfoundation/hardhat-network-helpers/src/loadFixture.ts:59:18)
+      at async Context.<anonymous> (test/integration/FiatIntegration.test.ts:68:23)
+
+  43) Fiat Integration Tests
+       KYC and Compliance Integration
+         Should enforce KYC requirements for large transactions:
+     TypeError: stabilityPool.KEEPER_ROLE is not a function
+      at deployGatewayCoinFixture (test/fixtures/TestFixtures.ts:185:53)
+      at async loadFixture (node_modules/@nomicfoundation/hardhat-network-helpers/src/loadFixture.ts:59:18)
+      at async Context.<anonymous> (test/integration/FiatIntegration.test.ts:111:23)
+
+  44) Fiat Integration Tests
+       KYC and Compliance Integration
+         Should track AML compliance metrics:
+     TypeError: stabilityPool.KEEPER_ROLE is not a function
+      at deployGatewayCoinFixture (test/fixtures/TestFixtures.ts:185:53)
+      at async loadFixture (node_modules/@nomicfoundation/hardhat-network-helpers/src/loadFixture.ts:59:18)
+      at async Context.<anonymous> (test/integration/FiatIntegration.test.ts:143:23)
+
+  45) Fiat Integration Tests
+       Payment Method Integration
+         Should handle credit card payments correctly:
+     TypeError: stabilityPool.KEEPER_ROLE is not a function
+      at deployGatewayCoinFixture (test/fixtures/TestFixtures.ts:185:53)
+      at async loadFixture (node_modules/@nomicfoundation/hardhat-network-helpers/src/loadFixture.ts:59:18)
+      at async Context.<anonymous> (test/integration/FiatIntegration.test.ts:173:23)
+
+  46) Fiat Integration Tests
+       Payment Method Integration
+         Should handle ACH bank transfers:
+     TypeError: stabilityPool.KEEPER_ROLE is not a function
+      at deployGatewayCoinFixture (test/fixtures/TestFixtures.ts:185:53)
+      at async loadFixture (node_modules/@nomicfoundation/hardhat-network-helpers/src/loadFixture.ts:59:18)
+      at async Context.<anonymous> (test/integration/FiatIntegration.test.ts:201:23)
+
+  47) Fiat Integration Tests
+       Payment Method Integration
+         Should handle payment failures and refunds:
+     TypeError: stabilityPool.KEEPER_ROLE is not a function
+      at deployGatewayCoinFixture (test/fixtures/TestFixtures.ts:185:53)
+      at async loadFixture (node_modules/@nomicfoundation/hardhat-network-helpers/src/loadFixture.ts:59:18)
+      at async Context.<anonymous> (test/integration/FiatIntegration.test.ts:236:23)
+
+  48) Fiat Integration Tests
+       Fiat Backing and Reserves
+         Should maintain full fiat backing of circulating supply:
+     TypeError: stabilityPool.KEEPER_ROLE is not a function
+      at deployGatewayCoinFixture (test/fixtures/TestFixtures.ts:185:53)
+      at async loadFixture (node_modules/@nomicfoundation/hardhat-network-helpers/src/loadFixture.ts:59:18)
+      at async Context.<anonymous> (test/integration/FiatIntegration.test.ts:264:23)
+
+  49) Fiat Integration Tests
+       Fiat Backing and Reserves
+         Should handle reserve rebalancing correctly:
+     TypeError: stabilityPool.KEEPER_ROLE is not a function
+      at deployGatewayCoinFixture (test/fixtures/TestFixtures.ts:185:53)
+      at async loadFixture (node_modules/@nomicfoundation/hardhat-network-helpers/src/loadFixture.ts:59:18)
+      at async Context.<anonymous> (test/integration/FiatIntegration.test.ts:312:23)
+
+  50) Fiat Integration Tests
+       Fiat Backing and Reserves
+         Should enforce minimum reserve requirements:
+     TypeError: stabilityPool.KEEPER_ROLE is not a function
+      at deployGatewayCoinFixture (test/fixtures/TestFixtures.ts:185:53)
+      at async loadFixture (node_modules/@nomicfoundation/hardhat-network-helpers/src/loadFixture.ts:59:18)
+      at async Context.<anonymous> (test/integration/FiatIntegration.test.ts:335:23)
+
+  51) Fiat Integration Tests
+       Real-Time Fiat Price Feeds
+         Should handle USD/GATE price fluctuations:
+     TypeError: stabilityPool.KEEPER_ROLE is not a function
+      at deployGatewayCoinFixture (test/fixtures/TestFixtures.ts:185:53)
+      at async loadFixture (node_modules/@nomicfoundation/hardhat-network-helpers/src/loadFixture.ts:59:18)
+      at async Context.<anonymous> (test/integration/FiatIntegration.test.ts:366:23)
+
+  52) Fiat Integration Tests
+       Real-Time Fiat Price Feeds
+         Should maintain peg stability during price volatility:
+     TypeError: stabilityPool.KEEPER_ROLE is not a function
+      at deployGatewayCoinFixture (test/fixtures/TestFixtures.ts:185:53)
+      at async loadFixture (node_modules/@nomicfoundation/hardhat-network-helpers/src/loadFixture.ts:59:18)
+      at async Context.<anonymous> (test/integration/FiatIntegration.test.ts:413:23)
+
+  53) Fiat Integration Tests
+       Error Handling and Edge Cases
+         Should handle double-spending prevention:
+     TypeError: stabilityPool.KEEPER_ROLE is not a function
+      at deployGatewayCoinFixture (test/fixtures/TestFixtures.ts:185:53)
+      at async loadFixture (node_modules/@nomicfoundation/hardhat-network-helpers/src/loadFixture.ts:59:18)
+      at async Context.<anonymous> (test/integration/FiatIntegration.test.ts:464:23)
+
+  54) Fiat Integration Tests
+       Error Handling and Edge Cases
+         Should handle network failures gracefully:
+     TypeError: stabilityPool.KEEPER_ROLE is not a function
+      at deployGatewayCoinFixture (test/fixtures/TestFixtures.ts:185:53)
+      at async loadFixture (node_modules/@nomicfoundation/hardhat-network-helpers/src/loadFixture.ts:59:18)
+      at async Context.<anonymous> (test/integration/FiatIntegration.test.ts:488:23)
+
+  55) Fiat Integration Tests
+       Error Handling and Edge Cases
+         Should enforce transaction limits correctly:
+     TypeError: stabilityPool.KEEPER_ROLE is not a function
+      at deployGatewayCoinFixture (test/fixtures/TestFixtures.ts:185:53)
+      at async loadFixture (node_modules/@nomicfoundation/hardhat-network-helpers/src/loadFixture.ts:59:18)
+      at async Context.<anonymous> (test/integration/FiatIntegration.test.ts:516:23)
+
+  56) Performance Benchmarks
+       Transaction Throughput Tests
+         Should handle high-volume sequential transactions:
+     TypeError: stabilityPool.KEEPER_ROLE is not a function
+      at deployGatewayCoinFixture (test/fixtures/TestFixtures.ts:185:53)
+      at async deployStressTestFixture (test/fixtures/TestFixtures.ts:274:19)
+      at async loadFixture (node_modules/@nomicfoundation/hardhat-network-helpers/src/loadFixture.ts:59:18)
+      at async Context.<anonymous> (test/performance/PerformanceBenchmarks.test.ts:12:23)
+
+  57) Performance Benchmarks
+       Transaction Throughput Tests
+         Should maintain performance under concurrent load simulation:
+     TypeError: stabilityPool.KEEPER_ROLE is not a function
+      at deployGatewayCoinFixture (test/fixtures/TestFixtures.ts:185:53)
+      at async deployStressTestFixture (test/fixtures/TestFixtures.ts:274:19)
+      at async loadFixture (node_modules/@nomicfoundation/hardhat-network-helpers/src/loadFixture.ts:59:18)
+      at async Context.<anonymous> (test/performance/PerformanceBenchmarks.test.ts:58:23)
+
+  58) Performance Benchmarks
+       Transaction Throughput Tests
+         Should optimize gas usage for complex economic operations:
+     TypeError: stabilityPool.KEEPER_ROLE is not a function
+      at deployGatewayCoinFixture (test/fixtures/TestFixtures.ts:185:53)
+      at async loadFixture (node_modules/@nomicfoundation/hardhat-network-helpers/src/loadFixture.ts:59:18)
+      at async Context.<anonymous> (test/performance/PerformanceBenchmarks.test.ts:117:23)
+
+  59) Performance Benchmarks
+       Memory and State Management
+         Should efficiently handle large-scale state updates:
+     TypeError: stabilityPool.KEEPER_ROLE is not a function
+      at deployGatewayCoinFixture (test/fixtures/TestFixtures.ts:185:53)
+      at async deployStressTestFixture (test/fixtures/TestFixtures.ts:274:19)
+      at async loadFixture (node_modules/@nomicfoundation/hardhat-network-helpers/src/loadFixture.ts:59:18)
+      at async Context.<anonymous> (test/performance/PerformanceBenchmarks.test.ts:201:23)
+
+  60) Performance Benchmarks
+       Memory and State Management
+         Should optimize storage for economic parameter updates:
+     TypeError: stabilityPool.KEEPER_ROLE is not a function
+      at deployGatewayCoinFixture (test/fixtures/TestFixtures.ts:185:53)
+      at async loadFixture (node_modules/@nomicfoundation/hardhat-network-helpers/src/loadFixture.ts:59:18)
+      at async Context.<anonymous> (test/performance/PerformanceBenchmarks.test.ts:254:23)
+
+  61) Performance Benchmarks
+       Cross-Chain Performance
+         Should benchmark cross-chain message processing:
+     TypeError: stabilityPool.KEEPER_ROLE is not a function
+      at deployGatewayCoinFixture (test/fixtures/TestFixtures.ts:185:53)
+      at async loadFixture (node_modules/@nomicfoundation/hardhat-network-helpers/src/loadFixture.ts:59:18)
+      at async Context.<anonymous> (test/performance/PerformanceBenchmarks.test.ts:337:23)
+
+  62) Performance Benchmarks
+       Cross-Chain Performance
+         Should handle cross-chain parameter synchronization efficiently:
+     TypeError: stabilityPool.KEEPER_ROLE is not a function
+      at deployGatewayCoinFixture (test/fixtures/TestFixtures.ts:185:53)
+      at async loadFixture (node_modules/@nomicfoundation/hardhat-network-helpers/src/loadFixture.ts:59:18)
+      at async Context.<anonymous> (test/performance/PerformanceBenchmarks.test.ts:385:23)
+
+  63) Performance Benchmarks
+       Load Testing and Scalability
+         Should handle peak usage scenarios:
+     TypeError: stabilityPool.KEEPER_ROLE is not a function
+      at deployGatewayCoinFixture (test/fixtures/TestFixtures.ts:185:53)
+      at async deployStressTestFixture (test/fixtures/TestFixtures.ts:274:19)
+      at async loadFixture (node_modules/@nomicfoundation/hardhat-network-helpers/src/loadFixture.ts:59:18)
+      at async Context.<anonymous> (test/performance/PerformanceBenchmarks.test.ts:444:23)
+
+  64) Performance Benchmarks
+       Load Testing and Scalability
+         Should maintain consistent performance under sustained load:
+     TypeError: stabilityPool.KEEPER_ROLE is not a function
+      at deployGatewayCoinFixture (test/fixtures/TestFixtures.ts:185:53)
+      at async deployPerformanceTestFixture (test/fixtures/TestFixtures.ts:342:19)
+      at async loadFixture (node_modules/@nomicfoundation/hardhat-network-helpers/src/loadFixture.ts:59:18)
+      at async Context.<anonymous> (test/performance/PerformanceBenchmarks.test.ts:529:23)
+
+  65) Performance Benchmarks
+       Economic Model Performance
+         Should efficiently process complex economic calculations:
+     TypeError: stabilityPool.KEEPER_ROLE is not a function
+      at deployGatewayCoinFixture (test/fixtures/TestFixtures.ts:185:53)
+      at async loadFixture (node_modules/@nomicfoundation/hardhat-network-helpers/src/loadFixture.ts:59:18)
+      at async Context.<anonymous> (test/performance/PerformanceBenchmarks.test.ts:598:23)
+
+  66) Security Audit Tests
+       Access Control Security
+         Should enforce owner-only functions correctly:
+     TypeError: stabilityPool.KEEPER_ROLE is not a function
+      at deployGatewayCoinFixture (test/fixtures/TestFixtures.ts:185:53)
+      at async loadFixture (node_modules/@nomicfoundation/hardhat-network-helpers/src/loadFixture.ts:59:18)
+      at async Context.<anonymous> (test/security/SecurityAudit.test.ts:9:23)
+
+  67) Security Audit Tests
+       Access Control Security
+         Should prevent unauthorized role escalation:
+     TypeError: stabilityPool.KEEPER_ROLE is not a function
+      at deployGatewayCoinFixture (test/fixtures/TestFixtures.ts:185:53)
+      at async loadFixture (node_modules/@nomicfoundation/hardhat-network-helpers/src/loadFixture.ts:59:18)
+      at async Context.<anonymous> (test/security/SecurityAudit.test.ts:54:23)
+
+  68) Security Audit Tests
+       Access Control Security
+         Should validate multi-signature requirements for critical operations:
+     TypeError: stabilityPool.KEEPER_ROLE is not a function
+      at deployGatewayCoinFixture (test/fixtures/TestFixtures.ts:185:53)
+      at async loadFixture (node_modules/@nomicfoundation/hardhat-network-helpers/src/loadFixture.ts:59:18)
+      at async Context.<anonymous> (test/security/SecurityAudit.test.ts:71:23)
+
+  69) Security Audit Tests
+       Smart Contract Vulnerabilities
+         Should prevent reentrancy attacks:
+     TypeError: stabilityPool.KEEPER_ROLE is not a function
+      at deployGatewayCoinFixture (test/fixtures/TestFixtures.ts:185:53)
+      at async loadFixture (node_modules/@nomicfoundation/hardhat-network-helpers/src/loadFixture.ts:59:18)
+      at async Context.<anonymous> (test/security/SecurityAudit.test.ts:95:23)
+
+  70) Security Audit Tests
+       Smart Contract Vulnerabilities
+         Should prevent integer overflow/underflow:
+     TypeError: stabilityPool.KEEPER_ROLE is not a function
+      at deployGatewayCoinFixture (test/fixtures/TestFixtures.ts:185:53)
+      at async loadFixture (node_modules/@nomicfoundation/hardhat-network-helpers/src/loadFixture.ts:59:18)
+      at async Context.<anonymous> (test/security/SecurityAudit.test.ts:113:23)
+
+  71) Security Audit Tests
+       Smart Contract Vulnerabilities
+         Should validate input parameters correctly:
+     TypeError: stabilityPool.KEEPER_ROLE is not a function
+      at deployGatewayCoinFixture (test/fixtures/TestFixtures.ts:185:53)
+      at async loadFixture (node_modules/@nomicfoundation/hardhat-network-helpers/src/loadFixture.ts:59:18)
+      at async Context.<anonymous> (test/security/SecurityAudit.test.ts:130:23)
+
+  72) Security Audit Tests
+       Smart Contract Vulnerabilities
+         Should handle edge cases in mathematical calculations:
+     TypeError: stabilityPool.KEEPER_ROLE is not a function
+      at deployGatewayCoinFixture (test/fixtures/TestFixtures.ts:185:53)
+      at async loadFixture (node_modules/@nomicfoundation/hardhat-network-helpers/src/loadFixture.ts:59:18)
+      at async Context.<anonymous> (test/security/SecurityAudit.test.ts:184:23)
+
+  73) Security Audit Tests
+       Economic Attack Vectors
+         Should prevent flash loan attacks on stability pool:
+     TypeError: stabilityPool.KEEPER_ROLE is not a function
+      at deployGatewayCoinFixture (test/fixtures/TestFixtures.ts:185:53)
+      at async loadFixture (node_modules/@nomicfoundation/hardhat-network-helpers/src/loadFixture.ts:59:18)
+      at async Context.<anonymous> (test/security/SecurityAudit.test.ts:205:23)
+
+  74) Security Audit Tests
+       Economic Attack Vectors
+         Should detect and prevent MEV sandwich attacks:
+     TypeError: stabilityPool.KEEPER_ROLE is not a function
+      at deployGatewayCoinFixture (test/fixtures/TestFixtures.ts:185:53)
+      at async loadFixture (node_modules/@nomicfoundation/hardhat-network-helpers/src/loadFixture.ts:59:18)
+      at async Context.<anonymous> (test/security/SecurityAudit.test.ts:228:23)
+
+  75) Security Audit Tests
+       Economic Attack Vectors
+         Should prevent governance token manipulation:
+     TypeError: stabilityPool.KEEPER_ROLE is not a function
+      at deployGatewayCoinFixture (test/fixtures/TestFixtures.ts:185:53)
+      at async loadFixture (node_modules/@nomicfoundation/hardhat-network-helpers/src/loadFixture.ts:59:18)
+      at async Context.<anonymous> (test/security/SecurityAudit.test.ts:254:23)
+
+  76) Security Audit Tests
+       Economic Attack Vectors
+         Should resist economic griefing attacks:
+     TypeError: stabilityPool.KEEPER_ROLE is not a function
+      at deployGatewayCoinFixture (test/fixtures/TestFixtures.ts:185:53)
+      at async loadFixture (node_modules/@nomicfoundation/hardhat-network-helpers/src/loadFixture.ts:59:18)
+      at async Context.<anonymous> (test/security/SecurityAudit.test.ts:289:23)
+
+  77) Security Audit Tests
+       Cross-Chain Security
+         Should validate cross-chain message authenticity:
+     TypeError: stabilityPool.KEEPER_ROLE is not a function
+      at deployGatewayCoinFixture (test/fixtures/TestFixtures.ts:185:53)
+      at async loadFixture (node_modules/@nomicfoundation/hardhat-network-helpers/src/loadFixture.ts:59:18)
+      at async Context.<anonymous> (test/security/SecurityAudit.test.ts:322:23)
+
+  78) Security Audit Tests
+       Cross-Chain Security
+         Should prevent cross-chain replay attacks:
+     TypeError: stabilityPool.KEEPER_ROLE is not a function
+      at deployGatewayCoinFixture (test/fixtures/TestFixtures.ts:185:53)
+      at async loadFixture (node_modules/@nomicfoundation/hardhat-network-helpers/src/loadFixture.ts:59:18)
+      at async Context.<anonymous> (test/security/SecurityAudit.test.ts:342:23)
+
+  79) Security Audit Tests
+       Cross-Chain Security
+         Should handle cross-chain communication failures gracefully:
+     TypeError: stabilityPool.KEEPER_ROLE is not a function
+      at deployGatewayCoinFixture (test/fixtures/TestFixtures.ts:185:53)
+      at async loadFixture (node_modules/@nomicfoundation/hardhat-network-helpers/src/loadFixture.ts:59:18)
+      at async Context.<anonymous> (test/security/SecurityAudit.test.ts:363:23)
+
+  80) Security Audit Tests
+       Data Privacy and Encryption
+         Should protect sensitive user data:
+     TypeError: stabilityPool.KEEPER_ROLE is not a function
+      at deployGatewayCoinFixture (test/fixtures/TestFixtures.ts:185:53)
+      at async loadFixture (node_modules/@nomicfoundation/hardhat-network-helpers/src/loadFixture.ts:59:18)
+      at async Context.<anonymous> (test/security/SecurityAudit.test.ts:381:23)
+
+  81) Security Audit Tests
+       Data Privacy and Encryption
+         Should validate encrypted communication channels:
+     TypeError: stabilityPool.KEEPER_ROLE is not a function
+      at deployGatewayCoinFixture (test/fixtures/TestFixtures.ts:185:53)
+      at async loadFixture (node_modules/@nomicfoundation/hardhat-network-helpers/src/loadFixture.ts:59:18)
+      at async Context.<anonymous> (test/security/SecurityAudit.test.ts:404:23)
+
+  82) Security Audit Tests
+       DOS and Rate Limiting
+         Should resist denial of service attacks:
+     TypeError: stabilityPool.KEEPER_ROLE is not a function
+      at deployGatewayCoinFixture (test/fixtures/TestFixtures.ts:185:53)
+      at async loadFixture (node_modules/@nomicfoundation/hardhat-network-helpers/src/loadFixture.ts:59:18)
+      at async Context.<anonymous> (test/security/SecurityAudit.test.ts:420:23)
+
+  83) Security Audit Tests
+       DOS and Rate Limiting
+         Should implement rate limiting for critical functions:
+     TypeError: stabilityPool.KEEPER_ROLE is not a function
+      at deployGatewayCoinFixture (test/fixtures/TestFixtures.ts:185:53)
+      at async loadFixture (node_modules/@nomicfoundation/hardhat-network-helpers/src/loadFixture.ts:59:18)
+      at async Context.<anonymous> (test/security/SecurityAudit.test.ts:445:23)
+
+  84) Security Audit Tests
+       Emergency Response Security
+         Should secure emergency mode activation:
+     TypeError: stabilityPool.KEEPER_ROLE is not a function
+      at deployGatewayCoinFixture (test/fixtures/TestFixtures.ts:185:53)
+      at async loadFixture (node_modules/@nomicfoundation/hardhat-network-helpers/src/loadFixture.ts:59:18)
+      at async Context.<anonymous> (test/security/SecurityAudit.test.ts:473:23)
+
+  85) Security Audit Tests
+       Emergency Response Security
+         Should handle security incidents properly:
+     TypeError: stabilityPool.KEEPER_ROLE is not a function
+      at deployGatewayCoinFixture (test/fixtures/TestFixtures.ts:185:53)
+      at async loadFixture (node_modules/@nomicfoundation/hardhat-network-helpers/src/loadFixture.ts:59:18)
+      at async Context.<anonymous> (test/security/SecurityAudit.test.ts:496:23)
+
+  86) Security Audit Tests
+       Emergency Response Security
+         Should maintain audit trail for security events:
+     TypeError: stabilityPool.KEEPER_ROLE is not a function
+      at deployGatewayCoinFixture (test/fixtures/TestFixtures.ts:185:53)
+      at async loadFixture (node_modules/@nomicfoundation/hardhat-network-helpers/src/loadFixture.ts:59:18)
+      at async Context.<anonymous> (test/security/SecurityAudit.test.ts:515:23)
+
+  87) Security Audit Tests
+       Compliance and Regulatory Security
+         Should enforce AML compliance limits:
+     TypeError: stabilityPool.KEEPER_ROLE is not a function
+      at deployGatewayCoinFixture (test/fixtures/TestFixtures.ts:185:53)
+      at async loadFixture (node_modules/@nomicfoundation/hardhat-network-helpers/src/loadFixture.ts:59:18)
+      at async Context.<anonymous> (test/security/SecurityAudit.test.ts:544:23)
+
+  88) Security Audit Tests
+       Compliance and Regulatory Security
+         Should maintain transaction monitoring for suspicious activity:
+     TypeError: stabilityPool.KEEPER_ROLE is not a function
+      at deployGatewayCoinFixture (test/fixtures/TestFixtures.ts:185:53)
+      at async loadFixture (node_modules/@nomicfoundation/hardhat-network-helpers/src/loadFixture.ts:59:18)
+      at async Context.<anonymous> (test/security/SecurityAudit.test.ts:576:23)
+
+  89) Security Audit Tests
+       Compliance and Regulatory Security
+         Should enforce data retention and privacy policies:
+     TypeError: stabilityPool.KEEPER_ROLE is not a function
+      at deployGatewayCoinFixture (test/fixtures/TestFixtures.ts:185:53)
+      at async loadFixture (node_modules/@nomicfoundation/hardhat-network-helpers/src/loadFixture.ts:59:18)
+      at async Context.<anonymous> (test/security/SecurityAudit.test.ts:602:23)
+
+  90) Economic Model Stress Testing
+       Demurrage System Stress Tests
+         Should handle extreme dormancy scenarios:
+     TypeError: stabilityPool.KEEPER_ROLE is not a function
+      at deployGatewayCoinFixture (test/fixtures/TestFixtures.ts:185:53)
+      at async loadFixture (node_modules/@nomicfoundation/hardhat-network-helpers/src/loadFixture.ts:59:18)
+      at async Context.<anonymous> (test/stress/EconomicStressTesting.test.ts:11:23)
+
+  91) Economic Model Stress Testing
+       Demurrage System Stress Tests
+         Should handle mass reactivation after dormancy:
+     TypeError: stabilityPool.KEEPER_ROLE is not a function
+      at deployGatewayCoinFixture (test/fixtures/TestFixtures.ts:185:53)
+      at async deployStressTestFixture (test/fixtures/TestFixtures.ts:274:19)
+      at async loadFixture (node_modules/@nomicfoundation/hardhat-network-helpers/src/loadFixture.ts:59:18)
+      at async Context.<anonymous> (test/stress/EconomicStressTesting.test.ts:78:23)
+
+  92) Economic Model Stress Testing
+       Demurrage System Stress Tests
+         Should maintain stability during extreme demurrage scenarios:
+     TypeError: stabilityPool.KEEPER_ROLE is not a function
+      at deployGatewayCoinFixture (test/fixtures/TestFixtures.ts:185:53)
+      at async loadFixture (node_modules/@nomicfoundation/hardhat-network-helpers/src/loadFixture.ts:59:18)
+      at async Context.<anonymous> (test/stress/EconomicStressTesting.test.ts:149:23)
+
+  93) Economic Model Stress Testing
+       Anti-Speculation System Stress Tests
+         Should handle coordinated speculation attacks:
+     TypeError: stabilityPool.KEEPER_ROLE is not a function
+      at deployGatewayCoinFixture (test/fixtures/TestFixtures.ts:185:53)
+      at async deployStressTestFixture (test/fixtures/TestFixtures.ts:274:19)
+      at async loadFixture (node_modules/@nomicfoundation/hardhat-network-helpers/src/loadFixture.ts:59:18)
+      at async Context.<anonymous> (test/stress/EconomicStressTesting.test.ts:208:23)
+
+  94) Economic Model Stress Testing
+       Anti-Speculation System Stress Tests
+         Should resist wash trading and circular trading patterns:
+     TypeError: stabilityPool.KEEPER_ROLE is not a function
+      at deployGatewayCoinFixture (test/fixtures/TestFixtures.ts:185:53)
+      at async loadFixture (node_modules/@nomicfoundation/hardhat-network-helpers/src/loadFixture.ts:59:18)
+      at async Context.<anonymous> (test/stress/EconomicStressTesting.test.ts:289:23)
+
+  95) Economic Model Stress Testing
+       Anti-Speculation System Stress Tests
+         Should handle volume manipulation attempts:
+     TypeError: stabilityPool.KEEPER_ROLE is not a function
+      at deployGatewayCoinFixture (test/fixtures/TestFixtures.ts:185:53)
+      at async loadFixture (node_modules/@nomicfoundation/hardhat-network-helpers/src/loadFixture.ts:59:18)
+      at async Context.<anonymous> (test/stress/EconomicStressTesting.test.ts:374:23)
+
+  96) Economic Model Stress Testing
+       Cross-Chain Stress Testing
+         Should handle cross-chain congestion and failures:
+     TypeError: stabilityPool.KEEPER_ROLE is not a function
+      at deployGatewayCoinFixture (test/fixtures/TestFixtures.ts:185:53)
+      at async loadFixture (node_modules/@nomicfoundation/hardhat-network-helpers/src/loadFixture.ts:59:18)
+      at async Context.<anonymous> (test/stress/EconomicStressTesting.test.ts:479:23)
+
+  97) Economic Model Stress Testing
+       Cross-Chain Stress Testing
+         Should resist cross-chain arbitrage attacks:
+     TypeError: stabilityPool.KEEPER_ROLE is not a function
+      at deployGatewayCoinFixture (test/fixtures/TestFixtures.ts:185:53)
+      at async loadFixture (node_modules/@nomicfoundation/hardhat-network-helpers/src/loadFixture.ts:59:18)
+      at async Context.<anonymous> (test/stress/EconomicStressTesting.test.ts:594:23)
+
+  98) Economic Model Stress Testing
+       Liquidity and Stability Pool Stress Tests
+         Should handle extreme liquidity drain scenarios:
+     TypeError: stabilityPool.KEEPER_ROLE is not a function
+      at deployGatewayCoinFixture (test/fixtures/TestFixtures.ts:185:53)
+      at async loadFixture (node_modules/@nomicfoundation/hardhat-network-helpers/src/loadFixture.ts:59:18)
+      at async Context.<anonymous> (test/stress/EconomicStressTesting.test.ts:721:23)
+
+  99) Economic Model Stress Testing
+       Liquidity and Stability Pool Stress Tests
+         Should handle stability pool manipulation attacks:
+     TypeError: stabilityPool.KEEPER_ROLE is not a function
+      at deployGatewayCoinFixture (test/fixtures/TestFixtures.ts:185:53)
+      at async loadFixture (node_modules/@nomicfoundation/hardhat-network-helpers/src/loadFixture.ts:59:18)
+      at async Context.<anonymous> (test/stress/EconomicStressTesting.test.ts:828:23)
+
+  100) GatewayCoin Unit Tests
+       Demurrage System
+         Should calculate demurrage for inactive accounts:
+     TypeError: stabilityPool.KEEPER_ROLE is not a function
+      at deployGatewayCoinFixture (test/fixtures/TestFixtures.ts:185:53)
+      at async loadFixture (node_modules/@nomicfoundation/hardhat-network-helpers/src/loadFixture.ts:59:18)
+      at async Context.<anonymous> (test/unit/GatewayCoin.unit.test.ts:105:23)
+
+  101) GatewayCoin Unit Tests
+       Demurrage System
+         Should not apply demurrage during grace period:
+     TypeError: stabilityPool.KEEPER_ROLE is not a function
+      at deployGatewayCoinFixture (test/fixtures/TestFixtures.ts:185:53)
+      at async loadFixture (node_modules/@nomicfoundation/hardhat-network-helpers/src/loadFixture.ts:59:18)
+      at async Context.<anonymous> (test/unit/GatewayCoin.unit.test.ts:119:23)
+
+  102) GatewayCoin Unit Tests
+       Demurrage System
+         Should not apply demurrage to exempt accounts:
+     TypeError: stabilityPool.KEEPER_ROLE is not a function
+      at deployGatewayCoinFixture (test/fixtures/TestFixtures.ts:185:53)
+      at async loadFixture (node_modules/@nomicfoundation/hardhat-network-helpers/src/loadFixture.ts:59:18)
+      at async Context.<anonymous> (test/unit/GatewayCoin.unit.test.ts:133:23)
+
+  103) GatewayCoin Unit Tests
+       Demurrage System
+         Should apply demurrage on transfers after time passes:
+     TypeError: stabilityPool.KEEPER_ROLE is not a function
+      at deployGatewayCoinFixture (test/fixtures/TestFixtures.ts:185:53)
+      at async loadFixture (node_modules/@nomicfoundation/hardhat-network-helpers/src/loadFixture.ts:59:18)
+      at async Context.<anonymous> (test/unit/GatewayCoin.unit.test.ts:150:23)
+
+  104) GatewayCoin Unit Tests
+       Anti-Speculation Penalties
+         Should calculate penalties for rapid trading:
+     TypeError: stabilityPool.KEEPER_ROLE is not a function
+      at deployGatewayCoinFixture (test/fixtures/TestFixtures.ts:185:53)
+      at async loadFixture (node_modules/@nomicfoundation/hardhat-network-helpers/src/loadFixture.ts:59:18)
+      at async Context.<anonymous> (test/unit/GatewayCoin.unit.test.ts:171:23)
+
+  105) GatewayCoin Unit Tests
+       Anti-Speculation Penalties
+         Should apply penalties to stability pool:
+     TypeError: stabilityPool.KEEPER_ROLE is not a function
+      at deployGatewayCoinFixture (test/fixtures/TestFixtures.ts:185:53)
+      at async loadFixture (node_modules/@nomicfoundation/hardhat-network-helpers/src/loadFixture.ts:59:18)
+      at async Context.<anonymous> (test/unit/GatewayCoin.unit.test.ts:187:23)
+
+  106) GatewayCoin Unit Tests
+       Access Control
+         Should allow owner to set configurations:
+     TypeError: stabilityPool.KEEPER_ROLE is not a function
+      at deployGatewayCoinFixture (test/fixtures/TestFixtures.ts:185:53)
+      at async loadFixture (node_modules/@nomicfoundation/hardhat-network-helpers/src/loadFixture.ts:59:18)
+      at async Context.<anonymous> (test/unit/GatewayCoin.unit.test.ts:358:23)
+
+  107) GatewayCoin Unit Tests
+       Access Control
+         Should not allow non-owner to set configurations:
+     TypeError: stabilityPool.KEEPER_ROLE is not a function
+      at deployGatewayCoinFixture (test/fixtures/TestFixtures.ts:185:53)
+      at async loadFixture (node_modules/@nomicfoundation/hardhat-network-helpers/src/loadFixture.ts:59:18)
+      at async Context.<anonymous> (test/unit/GatewayCoin.unit.test.ts:374:23)
+
+
+

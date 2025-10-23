@@ -1,0 +1,8 @@
+🚀 Deploying Gateway Coin to Ethereum Sepolia Testnet...
+
+📍 Deployer address: 0xfD33Cf15893DaC5a0ACFdE12f06DAC63a330b331
+💰 Deployer balance: 0.0 ETH
+
+❌ Deployment failed: Error: ❌ Deployer has no ETH. Please fund the account first.
+    at main (/home/persist/repos/work/vazio/gateway-coin/scripts/deploy-sepolia.ts:17:11)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
